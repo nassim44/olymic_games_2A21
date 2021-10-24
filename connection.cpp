@@ -4,9 +4,11 @@ Connection::Connection()
 {
 
 }
-///fedi
-bool Connection::createconnect()
-{bool test=false;
+bool Connection::createconnection()
+{
+ db=QSqlDatabase::addDatabase("Source_Projet2A");
+
+bool test=false;
 QSqlDatabase db = QSqlDatabase::addDatabase("QODBC");
 db.setDatabaseName("Source_Projet2A");//inserer le nom de la source de données ODBC
 db.setUserName("Soumaya");//inserer nom de l'utilisateur

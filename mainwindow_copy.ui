@@ -1516,14 +1516,7 @@
     <property name="title">
      <string>metier</string>
     </property>
-    <widget class="QMenu" name="menu">
-     <property name="title">
-      <string/>
-     </property>
-     <addaction name="actionsupprimer_jeux"/>
-    </widget>
-    <addaction name="menu"/>
-    <addaction name="separator"/>
+    <addaction name="action_2"/>
    </widget>
    <addaction name="menugestion_des_jeux"/>
    <addaction name="menumetier"/>
@@ -1548,9 +1541,9 @@
     <bool>false</bool>
    </attribute>
   </widget>
-  <action name="actionsupprimer_jeux">
+  <action name="action_2">
    <property name="text">
-    <string>supprimer jeux</string>
+    <string> </string>
    </property>
   </action>
  </widget>
