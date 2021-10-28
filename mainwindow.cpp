@@ -7,6 +7,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 }
+//QPixmap pix("C:/Users/Admin/Desktop/background.png");
 
 MainWindow::~MainWindow()
 {
