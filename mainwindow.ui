@@ -1,0 +1,1435 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1152</width>
+    <height>629</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTabWidget" name="tabWidget_2">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>0</y>
+      <width>1181</width>
+      <height>711</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Comic Sans MS</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+background-image: url(:/new/prefix1/background.jpg);
+QTabBar::tab {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #E1E1E1, stop: 0.4 #DDDDDD,
+                                stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
+    border: 2px solid#C4C4C3;
+    border-bottom-color: #C2C7CB; /* same as the pane color */
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    min-width:20ex;
+    padding: 2px;
+     font: bold, &quot;Comic Sans MS&quot;;
+}
+
+QTabBar::tab:selected, QTabBar::tab:hover {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #fafafa, stop: 0.4 #f4f4f4,
+                                stop: 0.5 #e7e7e7, stop: 1.0 #fafafa);
+}
+
+QTabBar::tab:selected {
+    border-color: #9B9B9B;
+    border-bottom-color: #C2C7CB; /* same as pane color */
+}</string>
+    </property>
+    <property name="tabShape">
+     <enum>QTabWidget::Triangular</enum>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="Employes">
+     <attribute name="title">
+      <string>ADD STAFF</string>
+     </attribute>
+     <widget class="QLineEdit" name="li_nom">
+      <property name="geometry">
+       <rect>
+        <x>960</x>
+        <y>100</y>
+        <width>111</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 2px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: white;
+selection-background-color: gray;
+font: bold, &quot;Comic Sans MS&quot;;</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pb_Abonne">
+      <property name="geometry">
+       <rect>
+        <x>760</x>
+        <y>350</y>
+        <width>91</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton
+{
+    color: #b1b1b1;
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #565656, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);
+    border-width: 1px;
+    border-color: #1e1e1e;
+    border-style: solid;
+    border-radius: 6;
+    padding: 3px;
+    font-size: 12px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+QPushButton:pressed
+{
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);
+}
+QPushButton:hover
+{
+    border: 2px solid QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffa02f, stop: 1 #d7801a);
+}</string>
+      </property>
+      <property name="text">
+       <string>Ajouter</string>
+      </property>
+     </widget>
+     <widget class="Line" name="line_2">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>400</y>
+        <width>551</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_23">
+      <property name="geometry">
+       <rect>
+        <x>150</x>
+        <y>430</y>
+        <width>113</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 2px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: white;
+selection-background-color: gray;
+font: bold, &quot;Comic Sans MS&quot;;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="li_cin">
+      <property name="geometry">
+       <rect>
+        <x>960</x>
+        <y>60</y>
+        <width>111</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 2px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: white;
+selection-background-color: gray;
+font: bold, &quot;Comic Sans MS&quot;;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="maxLength">
+       <number>8</number>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_17">
+      <property name="geometry">
+       <rect>
+        <x>670</x>
+        <y>220</y>
+        <width>141</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 2px solid black;
+font: 75 8pt &quot;MS Shell Dlg 2&quot;;
+border-radius: 10px;
+padding: 0 8px;
+background: #FFF0F5;
+font: bold, &quot;Comic Sans MS&quot;;;
+text-align:center;</string>
+      </property>
+      <property name="text">
+       <string>Staff Type</string>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QDateEdit" name="li_date_s">
+      <property name="geometry">
+       <rect>
+        <x>960</x>
+        <y>180</y>
+        <width>111</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="tri_ddn">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>510</y>
+        <width>191</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>9</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QRadioButton::indicator:unchecked{
+    color: #b1b1b1;
+    background-color: #323232;
+    border: 1px solid #b1b1b1;
+    border-radius: 6px;
+}
+
+QRadioButton::indicator:checked
+{
+    background-color: qradialgradient(
+        cx: 0.5, cy: 0.5,
+        fx: 0.5, fy: 0.5,
+        radius: 1.0,
+        stop: 0.25 #ffaa00,
+        stop: 0.3 #323232
+    );
+}
+QRadioButton::indicator
+{
+    border-radius: 6px;
+}
+
+ QRadioButton::indicator:disabled
+{
+    border: 1px solid #444;
+}
+</string>
+      </property>
+      <property name="text">
+       <string>Trier par competance</string>
+      </property>
+     </widget>
+     <widget class="Line" name="line_3">
+      <property name="geometry">
+       <rect>
+        <x>740</x>
+        <y>310</y>
+        <width>241</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="Line" name="line">
+      <property name="geometry">
+       <rect>
+        <x>600</x>
+        <y>40</y>
+        <width>21</width>
+        <height>341</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="li_prenom">
+      <property name="geometry">
+       <rect>
+        <x>960</x>
+        <y>140</y>
+        <width>111</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 2px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: white;
+selection-background-color: gray;
+font: bold, &quot;Comic Sans MS&quot;;</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_14">
+      <property name="geometry">
+       <rect>
+        <x>670</x>
+        <y>100</y>
+        <width>141</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 2px solid black;
+font: 75 8pt &quot;MS Shell Dlg 2&quot;;
+border-radius: 10px;
+padding: 0 8px;
+background: #FFF0F5;
+font: bold, &quot;Comic Sans MS&quot;;
+text-align:center;</string>
+      </property>
+      <property name="text">
+       <string>First Name</string>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_18">
+      <property name="geometry">
+       <rect>
+        <x>670</x>
+        <y>180</y>
+        <width>141</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 2px solid black;
+font: 75 8pt &quot;MS Shell Dlg 2&quot;;
+border-radius: 10px;
+padding: 0 8px;
+background: #FFF0F5;
+font: bold, &quot;Comic Sans MS&quot;;;
+text-align:center;</string>
+      </property>
+      <property name="text">
+       <string>Birthday</string>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="modifier_Abonnes">
+      <property name="geometry">
+       <rect>
+        <x>880</x>
+        <y>350</y>
+        <width>91</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton
+{
+    color: #b1b1b1;
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #565656, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);
+    border-width: 1px;
+    border-color: #1e1e1e;
+    border-style: solid;
+    border-radius: 6;
+    padding: 3px;
+    font-size: 12px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+QPushButton:pressed
+{
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);
+}
+QPushButton:hover
+{
+    border: 2px solid QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffa02f, stop: 1 #d7801a);
+}</string>
+      </property>
+      <property name="text">
+       <string>Modifier</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_15">
+      <property name="geometry">
+       <rect>
+        <x>670</x>
+        <y>140</y>
+        <width>141</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 2px solid black;
+font: 75 8pt &quot;MS Shell Dlg 2&quot;;
+border-radius: 10px;
+padding: 0 8px;
+background: #FFF0F5;
+font: bold, &quot;Comic Sans MS&quot;;;
+text-align:center;</string>
+      </property>
+      <property name="text">
+       <string>Last name</string>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QTableView" name="show_abonnes">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>40</y>
+        <width>571</width>
+        <height>351</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 2px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: white;
+selection-background-color: gray;
+font: bold, &quot;Comic Sans MS&quot;;</string>
+      </property>
+      <property name="sortingEnabled">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="tri_nom">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>480</y>
+        <width>141</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>9</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QRadioButton::indicator:unchecked{
+    color: #b1b1b1;
+    background-color: #323232;
+    border: 1px solid #b1b1b1;
+    border-radius: 6px;
+}
+
+QRadioButton::indicator:checked
+{
+    background-color: qradialgradient(
+        cx: 0.5, cy: 0.5,
+        fx: 0.5, fy: 0.5,
+        radius: 1.0,
+        stop: 0.25 #ffaa00,
+        stop: 0.3 #323232
+    );
+}
+QRadioButton::indicator
+{
+    border-radius: 6px;
+}
+
+ QRadioButton::indicator:disabled
+{
+    border: 1px solid #444;
+}
+</string>
+      </property>
+      <property name="text">
+       <string>Trier par Nom</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="supprimer_Abonnes">
+      <property name="geometry">
+       <rect>
+        <x>830</x>
+        <y>420</y>
+        <width>71</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton
+{
+    color: #b1b1b1;
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #565656, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);
+    border-width: 1px;
+    border-color: #1e1e1e;
+    border-style: solid;
+    border-radius: 6;
+    padding: 3px;
+    font-size: 12px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+QPushButton:pressed
+{
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);
+}
+QPushButton:hover
+{
+    border: 2px solid QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffa02f, stop: 1 #d7801a);
+}</string>
+      </property>
+      <property name="text">
+       <string>Supprimer</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_13">
+      <property name="geometry">
+       <rect>
+        <x>670</x>
+        <y>60</y>
+        <width>141</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 2px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #FFF0F5;
+font: bold, &quot;Comic Sans MS&quot;;;
+text-align:center;</string>
+      </property>
+      <property name="text">
+       <string>CIN</string>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="recherch_ab">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>430</y>
+        <width>101</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton
+{
+    color: #b1b1b1;
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #565656, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);
+    border-width: 1px;
+    border-color: #1e1e1e;
+    border-style: solid;
+    border-radius: 6;
+    padding: 3px;
+    font-size: 12px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+QPushButton:pressed
+{
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);
+}
+QPushButton:hover
+{
+    border: 2px solid QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffa02f, stop: 1 #d7801a);
+}</string>
+      </property>
+      <property name="text">
+       <string>recherche</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="comboBox">
+      <property name="geometry">
+       <rect>
+        <x>960</x>
+        <y>220</y>
+        <width>111</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>Health</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Security</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Worker</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QTabWidget" name="tabWidget_3">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>-30</y>
+        <width>1181</width>
+        <height>711</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Comic Sans MS</family>
+        <pointsize>9</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+background-image: url(:/new/prefix1/background.jpg);
+QTabBar::tab {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #E1E1E1, stop: 0.4 #DDDDDD,
+                                stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
+    border: 2px solid#C4C4C3;
+    border-bottom-color: #C2C7CB; /* same as the pane color */
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    min-width:20ex;
+    padding: 2px;
+     font: bold, &quot;Comic Sans MS&quot;;
+}
+
+QTabBar::tab:selected, QTabBar::tab:hover {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #fafafa, stop: 0.4 #f4f4f4,
+                                stop: 0.5 #e7e7e7, stop: 1.0 #fafafa);
+}
+
+QTabBar::tab:selected {
+    border-color: #9B9B9B;
+    border-bottom-color: #C2C7CB; /* same as pane color */
+}</string>
+      </property>
+      <property name="tabShape">
+       <enum>QTabWidget::Triangular</enum>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="Employes_4">
+       <attribute name="title">
+        <string>ADD STAFF</string>
+       </attribute>
+       <widget class="QLineEdit" name="li_nom_4">
+        <property name="geometry">
+         <rect>
+          <x>930</x>
+          <y>100</y>
+          <width>111</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 2px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: white;
+selection-background-color: gray;
+font: bold, &quot;Comic Sans MS&quot;;</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pb_Abonne_4">
+        <property name="geometry">
+         <rect>
+          <x>760</x>
+          <y>350</y>
+          <width>91</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton
+{
+    color: #b1b1b1;
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #565656, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);
+    border-width: 1px;
+    border-color: #1e1e1e;
+    border-style: solid;
+    border-radius: 6;
+    padding: 3px;
+    font-size: 12px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+QPushButton:pressed
+{
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);
+}
+QPushButton:hover
+{
+    border: 2px solid QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffa02f, stop: 1 #d7801a);
+}</string>
+        </property>
+        <property name="text">
+         <string>Ajouter</string>
+        </property>
+       </widget>
+       <widget class="Line" name="line_10">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>390</y>
+          <width>541</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_31">
+        <property name="geometry">
+         <rect>
+          <x>90</x>
+          <y>430</y>
+          <width>113</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 2px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: white;
+selection-background-color: gray;
+font: bold, &quot;Comic Sans MS&quot;;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="li_cin_4">
+        <property name="geometry">
+         <rect>
+          <x>930</x>
+          <y>60</y>
+          <width>111</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 2px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: white;
+selection-background-color: gray;
+font: bold, &quot;Comic Sans MS&quot;;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="maxLength">
+         <number>8</number>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_32">
+        <property name="geometry">
+         <rect>
+          <x>710</x>
+          <y>220</y>
+          <width>141</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 2px solid black;
+font: 75 8pt &quot;MS Shell Dlg 2&quot;;
+border-radius: 10px;
+padding: 0 8px;
+background: #FFF0F5;
+font: bold, &quot;Comic Sans MS&quot;;;
+text-align:center;</string>
+        </property>
+        <property name="text">
+         <string>Staff Type</string>
+        </property>
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QDateEdit" name="li_date_s_4">
+        <property name="geometry">
+         <rect>
+          <x>930</x>
+          <y>180</y>
+          <width>111</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="tri_ddn_4">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>510</y>
+          <width>191</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QRadioButton::indicator:unchecked{
+    color: #b1b1b1;
+    background-color: #323232;
+    border: 1px solid #b1b1b1;
+    border-radius: 6px;
+}
+
+QRadioButton::indicator:checked
+{
+    background-color: qradialgradient(
+        cx: 0.5, cy: 0.5,
+        fx: 0.5, fy: 0.5,
+        radius: 1.0,
+        stop: 0.25 #ffaa00,
+        stop: 0.3 #323232
+    );
+}
+QRadioButton::indicator
+{
+    border-radius: 6px;
+}
+
+ QRadioButton::indicator:disabled
+{
+    border: 1px solid #444;
+}
+</string>
+        </property>
+        <property name="text">
+         <string>Trier par competance</string>
+        </property>
+       </widget>
+       <widget class="Line" name="line_11">
+        <property name="geometry">
+         <rect>
+          <x>740</x>
+          <y>310</y>
+          <width>241</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+       <widget class="Line" name="line_12">
+        <property name="geometry">
+         <rect>
+          <x>600</x>
+          <y>40</y>
+          <width>21</width>
+          <height>341</height>
+         </rect>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="li_prenom_4">
+        <property name="geometry">
+         <rect>
+          <x>930</x>
+          <y>140</y>
+          <width>111</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 2px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: white;
+selection-background-color: gray;
+font: bold, &quot;Comic Sans MS&quot;;</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_33">
+        <property name="geometry">
+         <rect>
+          <x>710</x>
+          <y>100</y>
+          <width>141</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 2px solid black;
+font: 75 8pt &quot;MS Shell Dlg 2&quot;;
+border-radius: 10px;
+padding: 0 8px;
+background: #FFF0F5;
+font: bold, &quot;Comic Sans MS&quot;;
+text-align:center;</string>
+        </property>
+        <property name="text">
+         <string>First Name</string>
+        </property>
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_34">
+        <property name="geometry">
+         <rect>
+          <x>710</x>
+          <y>180</y>
+          <width>141</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 2px solid black;
+font: 75 8pt &quot;MS Shell Dlg 2&quot;;
+border-radius: 10px;
+padding: 0 8px;
+background: #FFF0F5;
+font: bold, &quot;Comic Sans MS&quot;;;
+text-align:center;</string>
+        </property>
+        <property name="text">
+         <string>Birthday</string>
+        </property>
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="modifier_Abonnes_4">
+        <property name="geometry">
+         <rect>
+          <x>880</x>
+          <y>350</y>
+          <width>91</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton
+{
+    color: #b1b1b1;
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #565656, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);
+    border-width: 1px;
+    border-color: #1e1e1e;
+    border-style: solid;
+    border-radius: 6;
+    padding: 3px;
+    font-size: 12px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+QPushButton:pressed
+{
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);
+}
+QPushButton:hover
+{
+    border: 2px solid QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffa02f, stop: 1 #d7801a);
+}</string>
+        </property>
+        <property name="text">
+         <string>Modifier</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_35">
+        <property name="geometry">
+         <rect>
+          <x>710</x>
+          <y>140</y>
+          <width>141</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 2px solid black;
+font: 75 8pt &quot;MS Shell Dlg 2&quot;;
+border-radius: 10px;
+padding: 0 8px;
+background: #FFF0F5;
+font: bold, &quot;Comic Sans MS&quot;;;
+text-align:center;</string>
+        </property>
+        <property name="text">
+         <string>Last name</string>
+        </property>
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QTableView" name="show_abonnes_4">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>40</y>
+          <width>571</width>
+          <height>351</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 2px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: white;
+selection-background-color: gray;
+font: bold, &quot;Comic Sans MS&quot;;</string>
+        </property>
+        <property name="sortingEnabled">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="tri_nom_4">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>480</y>
+          <width>141</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QRadioButton::indicator:unchecked{
+    color: #b1b1b1;
+    background-color: #323232;
+    border: 1px solid #b1b1b1;
+    border-radius: 6px;
+}
+
+QRadioButton::indicator:checked
+{
+    background-color: qradialgradient(
+        cx: 0.5, cy: 0.5,
+        fx: 0.5, fy: 0.5,
+        radius: 1.0,
+        stop: 0.25 #ffaa00,
+        stop: 0.3 #323232
+    );
+}
+QRadioButton::indicator
+{
+    border-radius: 6px;
+}
+
+ QRadioButton::indicator:disabled
+{
+    border: 1px solid #444;
+}
+</string>
+        </property>
+        <property name="text">
+         <string>Trier par Nom</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="supprimer_Abonnes_4">
+        <property name="geometry">
+         <rect>
+          <x>830</x>
+          <y>420</y>
+          <width>71</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton
+{
+    color: #b1b1b1;
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #565656, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);
+    border-width: 1px;
+    border-color: #1e1e1e;
+    border-style: solid;
+    border-radius: 6;
+    padding: 3px;
+    font-size: 12px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+QPushButton:pressed
+{
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);
+}
+QPushButton:hover
+{
+    border: 2px solid QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffa02f, stop: 1 #d7801a);
+}</string>
+        </property>
+        <property name="text">
+         <string>Supprimer</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_36">
+        <property name="geometry">
+         <rect>
+          <x>710</x>
+          <y>60</y>
+          <width>141</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 2px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #FFF0F5;
+font: bold, &quot;Comic Sans MS&quot;;;
+text-align:center;</string>
+        </property>
+        <property name="text">
+         <string>CIN</string>
+        </property>
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="recherch_ab_4">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>430</y>
+          <width>51</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton
+{
+    color: #b1b1b1;
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #565656, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);
+    border-width: 1px;
+    border-color: #1e1e1e;
+    border-style: solid;
+    border-radius: 6;
+    padding: 3px;
+    font-size: 12px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+QPushButton:pressed
+{
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);
+}
+QPushButton:hover
+{
+    border: 2px solid QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffa02f, stop: 1 #d7801a);
+}</string>
+        </property>
+        <property name="text">
+         <string>Search</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="comboBox_4">
+        <property name="geometry">
+         <rect>
+          <x>930</x>
+          <y>220</y>
+          <width>111</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <item>
+         <property name="text">
+          <string>Health</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Security</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Worker</string>
+         </property>
+        </item>
+       </widget>
+       <widget class="Line" name="line_19">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>20</y>
+          <width>531</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+       <widget class="Line" name="line_20">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>50</y>
+          <width>21</width>
+          <height>331</height>
+         </rect>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_8">
+       <attribute name="title">
+        <string>Musique</string>
+       </attribute>
+       <widget class="QWidget" name="layoutWidget_7">
+        <property name="geometry">
+         <rect>
+          <x>90</x>
+          <y>140</y>
+          <width>194</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_4">
+         <item>
+          <widget class="QPushButton" name="pushButton_8">
+           <property name="styleSheet">
+            <string notr="true">QPushButton
+{
+    color: #b1b1b1;
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #565656, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);
+    border-width: 1px;
+    border-color: #1e1e1e;
+    border-style: solid;
+    border-radius: 6;
+    padding: 3px;
+    font-size: 12px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+QPushButton:pressed
+{
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);
+}
+QPushButton:hover
+{
+    border: 2px solid QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffa02f, stop: 1 #d7801a);
+}</string>
+           </property>
+           <property name="text">
+            <string>Stop</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_9">
+           <property name="styleSheet">
+            <string notr="true">QPushButton
+{
+    color: #b1b1b1;
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #565656, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);
+    border-width: 1px;
+    border-color: #1e1e1e;
+    border-style: solid;
+    border-radius: 6;
+    padding: 3px;
+    font-size: 12px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+QPushButton:pressed
+{
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);
+}
+QPushButton:hover
+{
+    border: 2px solid QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffa02f, stop: 1 #d7801a);
+}</string>
+           </property>
+           <property name="text">
+            <string>Start</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="layoutWidget_8">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>50</y>
+          <width>291</width>
+          <height>52</height>
+         </rect>
+        </property>
+        <layout class="QFormLayout" name="formLayout_4">
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_7">
+           <property name="font">
+            <font>
+             <pointsize>9</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Progress</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QSlider" name="sliderProgress_4">
+           <property name="styleSheet">
+            <string notr="true">QSlider::groove:horizontal {
+    border: 1px solid #999999;
+    height: 8px; /* the groove expands to the size of the slider by default. by giving it a height, it has a fixed size */
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #B1B1B1, stop:1 #c4c4c4);
+    margin: 2px 0;
+}
+
+QSlider::handle:horizontal {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #b4b4b4, stop:1 #8f8f8f);
+    border: 1px solid #5c5c5c;
+    width: 18px;
+    margin: -2px 0; /* handle is placed by default on the contents rect of the groove. Expand outside the groove */
+    border-radius: 3px;
+}</string>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_8">
+           <property name="font">
+            <font>
+             <pointsize>9</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Volume</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QSlider" name="SliderVolume_4">
+           <property name="styleSheet">
+            <string notr="true">QSlider::groove:horizontal {
+    border: 1px solid #999999;
+    height: 8px; /* the groove expands to the size of the slider by default. by giving it a height, it has a fixed size */
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #B1B1B1, stop:1 #c4c4c4);
+    margin: 2px 0;
+}
+
+QSlider::handle:horizontal {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #b4b4b4, stop:1 #8f8f8f);
+    border: 1px solid #5c5c5c;
+    width: 18px;
+    margin: -2px 0; /* handle is placed by default on the contents rect of the groove. Expand outside the groove */
+    border-radius: 3px;
+}</string>
+           </property>
+           <property name="value">
+            <number>99</number>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_2">
+       <attribute name="title">
+        <string>Page</string>
+       </attribute>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1152</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
