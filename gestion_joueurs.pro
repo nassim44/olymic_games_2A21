@@ -17,11 +17,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     connexion.cpp \
+    joueur.cpp \
     main.cpp \
     saharwindow.cpp
 
 HEADERS += \
     connexion.h \
+    joueur.h \
     saharwindow.h
 
 FORMS += \

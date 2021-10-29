@@ -1,4 +1,4 @@
-#include "mainwindow.h"
+#include "saharwindow.h"
 #include <QApplication>
 #include <QMessageBox>
 #include "connexion.h"
@@ -7,7 +7,7 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
     connexion c;
     bool test=c.create_cnx();
-    MainWindow w;
+    saharwindow w;
     if(test)
     {    w.show();
         QMessageBox::information(nullptr,QObject::tr("database is open"),
