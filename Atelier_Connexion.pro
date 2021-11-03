@@ -25,15 +25,20 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+    gestion_des_jeux.cpp \
+    jeux.cpp \
         main.cpp \
         mainwindow.cpp \
     connection.cpp
 
 HEADERS += \
+    gestion_des_jeux.h \
+    jeux.h \
         mainwindow.h \
     connection.h
 
 FORMS += \
+        gestion_des_jeux.ui \
         mainwindow.ui
 
 # Default rules for deployment.
