@@ -5,23 +5,25 @@
 
 class Stade
 {
-    QString nom,type/*,date*/;
+private:
+    QString nom,type;
     int id ,capacite;
 public:
     Stade();
-    Stade(int,int,QString,QString/*,QString*/);
+    Stade(int,int,QString,QString);
+    int getid(){return id;}
+    int getcapacite(){return capacite;}
     QString getnom(){return nom;}
     QString gettype(){return type;}
-    //QString getdate(){return date;}
-    int getid(){return id;}
-    void setnom(QString n){nom=n;}
-    void settype(QString t){type=t;}
-    //void setdate(QString d){date=d;}
+
     void setid(int id ){this->id=id;}
     void setcapacite(int capacite ){this->capacite=capacite;}
+    void setnom(QString n){nom=n;}
+    void settype(QString t){type=t;}
     bool ajouter();
     QSqlQueryModel* afficher();
-   // bool supprimer(int);
+    bool supprimer(int);
+
 };
 
 #endif // STADE_H

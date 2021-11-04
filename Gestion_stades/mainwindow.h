@@ -16,12 +16,16 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_pb_ajouter_clicked();
+
 
     //void on_pushButton_supprimer_clicked();
 
+    void on_pb_ajouter_clicked();
+
+    void on_pushButton_clicked();
+
 private:
     Ui::MainWindow *ui;
-    Stade S;
+    Stade sta;
 };
 #endif // MAINWINDOW_H
