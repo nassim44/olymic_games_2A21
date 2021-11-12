@@ -1,0 +1,76 @@
+#include "event.h"
+#include <QSqlQuery>
+#include <QtDebug>
+#include <QSqlQueryModel>
+#include <QObject>
+Event::Event()
+{
+    id_stade=0;
+    id_jeux=0;
+}
+Event::Event(int id_stade,int id_jeux,QDateTime date)
+{
+    this->id_stade=id_stade;
+    this->id_jeux=id_jeux;
+    this->date=date;
+}
+QString Event::ajouterevent()
+{
+    QSqlQuery queryStade;
+    QSqlQuery queryJeu;
+    QSqlQuery queryDateExiste;
+    QSqlQuery queryInsert;
+    QString idStade = QString::number(id_stade);
+    QString idJeux = QString::number(id_jeux);
+    QString typeStade = "";
+    QString typeJeu = "";
+
+    //Get type stade
+    queryStade.prepare("SELECT * FROM stade WHERE ID_STADE = :id");
+    queryStade.bindValue(":id",idStade);
+    queryStade.exec();
+    while(queryStade.next()) {
+        typeStade = queryStade.value(2).toString();
+    }
+
+    //Get type jeu
+    queryJeu.prepare("SELECT * FROM jeux WHERE ID_JEUX = :id");
+    queryJeu.bindValue(":id",idJeux);
+    queryJeu.exec();
+    while(queryJeu.next()) {
+        typeJeu = queryJeu.value(1).toString();
+    }
+
+    //Check if stade is available
+    queryDateExiste.prepare("SELECT * FROM event WHERE ID_STADE = :id AND DATE_EVENT = :date");
+    queryDateExiste.bindValue(":id",idStade);
+    queryDateExiste.bindValue(":date",date.toString("dd-mm-yyyy hh:mm"));
+    queryDateExiste.exec();
+    if(QString::compare(typeStade,typeJeu,Qt::CaseInsensitive) == 0) {
+        if(queryDateExiste.next() == false) {
+            queryInsert.prepare("INSERT INTO event (ID_STADE,ID_JEUX,DATE_EVENT) values (:ID_STADE,:ID_JEUX,:DATE_EVENT)");
+            queryInsert.bindValue (":ID_STADE",idStade);
+            queryInsert.bindValue(":ID_JEUX",idJeux);
+            queryInsert.bindValue(":DATE_EVENT",date.toString("dd-mm-yyyy hh:mm"));
+
+            if(queryInsert.exec()) {
+                return "Match affecte";
+            } else {
+                return "Match non affecte";
+            }
+        }
+        return "Ce stade est complet dans cette date";
+    }
+    return "Le match et le stade n'ont pas le meme type";
+}
+QSqlQueryModel* Event::afficher()
+{
+    QSqlQueryModel* model=new QSqlQueryModel();
+
+    model->setQuery("SELECT ID_STADE, DATE_EVENT FROM event");
+    model->setHeaderData(0,Qt::Horizontal, QObject::tr("Identifiant"));
+    model->setHeaderData(1,Qt::Horizontal, QObject::tr("Date"));
+
+
+    return model;
+}
