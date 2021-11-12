@@ -2,12 +2,13 @@
 #define STADE_H
 #include <QString>
 #include <QSqlQueryModel>
-
+#include <QDateTime>
 class Stade
 {
 private:
     QString nom,type;
     int id ,capacite;
+
 public:
     Stade();
     Stade(int,int,QString,QString);
@@ -23,7 +24,15 @@ public:
     bool ajouter();
     QSqlQueryModel* afficher();
     bool supprimer(int);
-
+    bool modifier(int id);
+    QSqlQueryModel* trier();
+    QSqlQueryModel* trierparnom();
+    QSqlQueryModel* recherche(QString nom, QString capacite);
+    QSqlQueryModel* getids();
+    Stade* getstade(int id);
+    //QSqlQueryModel* getidj();
+    //Stade* getjeux(int id);
+    bool ajouterevent();
 };
 
 #endif // STADE_H

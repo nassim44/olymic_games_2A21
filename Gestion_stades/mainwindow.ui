@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>861</width>
-    <height>647</height>
+    <width>1226</width>
+    <height>768</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,9 +19,14 @@
      <rect>
       <x>40</x>
       <y>0</y>
-      <width>721</width>
-      <height>601</height>
+      <width>1161</width>
+      <height>721</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-family: poppins; sans serif;
+font-size: 14px;
+</string>
     </property>
     <property name="currentIndex">
      <number>0</number>
@@ -35,12 +40,36 @@
        <rect>
         <x>30</x>
         <y>20</y>
-        <width>661</width>
-        <height>521</height>
+        <width>1111</width>
+        <height>661</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="tabPosition">
+       <enum>QTabWidget::North</enum>
+      </property>
+      <property name="tabShape">
+       <enum>QTabWidget::Triangular</enum>
+      </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>2</number>
+      </property>
+      <property name="elideMode">
+       <enum>Qt::ElideNone</enum>
+      </property>
+      <property name="documentMode">
+       <bool>true</bool>
+      </property>
+      <property name="tabsClosable">
+       <bool>false</bool>
+      </property>
+      <property name="movable">
+       <bool>true</bool>
+      </property>
+      <property name="tabBarAutoHide">
+       <bool>true</bool>
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
@@ -49,10 +78,10 @@
        <widget class="QGroupBox" name="groupBox">
         <property name="geometry">
          <rect>
-          <x>90</x>
-          <y>40</y>
-          <width>411</width>
-          <height>371</height>
+          <x>20</x>
+          <y>10</y>
+          <width>991</width>
+          <height>571</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -64,63 +93,80 @@
         <widget class="QLabel" name="label">
          <property name="geometry">
           <rect>
-           <x>50</x>
-           <y>40</y>
+           <x>600</x>
+           <y>50</y>
            <width>56</width>
-           <height>16</height>
+           <height>31</height>
           </rect>
          </property>
+         <property name="styleSheet">
+          <string notr="true">font: 14pt &quot;Bahnschrift&quot;;</string>
+         </property>
          <property name="text">
-          <string>id</string>
+          <string>Id</string>
          </property>
         </widget>
         <widget class="QLabel" name="label_2">
          <property name="geometry">
           <rect>
-           <x>50</x>
+           <x>600</x>
            <y>100</y>
            <width>56</width>
-           <height>16</height>
+           <height>31</height>
           </rect>
          </property>
+         <property name="styleSheet">
+          <string notr="true">font: 14pt &quot;Bahnschrift&quot;;</string>
+         </property>
          <property name="text">
-          <string>nom</string>
+          <string>Nom</string>
          </property>
         </widget>
         <widget class="QLabel" name="label_3">
          <property name="geometry">
           <rect>
-           <x>50</x>
+           <x>570</x>
            <y>150</y>
-           <width>56</width>
-           <height>16</height>
+           <width>91</width>
+           <height>31</height>
           </rect>
          </property>
+         <property name="styleSheet">
+          <string notr="true">font: 14pt &quot;Bahnschrift&quot;;</string>
+         </property>
          <property name="text">
-          <string>capacite</string>
+          <string>Capacite</string>
          </property>
         </widget>
         <widget class="QLabel" name="label_4">
          <property name="geometry">
           <rect>
-           <x>50</x>
+           <x>600</x>
            <y>200</y>
            <width>56</width>
-           <height>16</height>
+           <height>31</height>
           </rect>
          </property>
+         <property name="styleSheet">
+          <string notr="true">font: 14pt &quot;Bahnschrift&quot;;</string>
+         </property>
          <property name="text">
-          <string>type</string>
+          <string>Type</string>
          </property>
         </widget>
         <widget class="QLineEdit" name="lineEdit_id">
          <property name="geometry">
           <rect>
-           <x>120</x>
-           <y>40</y>
-           <width>201</width>
-           <height>22</height>
+           <x>670</x>
+           <y>50</y>
+           <width>251</width>
+           <height>31</height>
           </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">border: 1px solid gray;
+border-radius: 10px;
+font: 10pt &quot;Bahnschrift&quot;;</string>
          </property>
          <property name="text">
           <string/>
@@ -129,47 +175,72 @@
         <widget class="QLineEdit" name="lineEdit_nom">
          <property name="geometry">
           <rect>
-           <x>120</x>
+           <x>670</x>
            <y>100</y>
-           <width>201</width>
-           <height>22</height>
+           <width>251</width>
+           <height>31</height>
           </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">border: 1px solid gray;
+border-radius: 10px;
+font: 10pt &quot;Bahnschrift&quot;;</string>
          </property>
         </widget>
         <widget class="QLineEdit" name="lineEdit_capacite">
          <property name="geometry">
           <rect>
-           <x>120</x>
+           <x>670</x>
            <y>150</y>
-           <width>201</width>
-           <height>22</height>
+           <width>251</width>
+           <height>31</height>
           </rect>
          </property>
          <property name="styleSheet">
-          <string notr="true">color: rgb(0, 0, 0);</string>
+          <string notr="true">border: 1px solid gray;
+border-radius: 10px;
+font: 10pt &quot;Bahnschrift&quot;;</string>
          </property>
         </widget>
         <widget class="QPushButton" name="pb_ajouter">
          <property name="geometry">
           <rect>
-           <x>300</x>
-           <y>320</y>
-           <width>93</width>
-           <height>28</height>
+           <x>770</x>
+           <y>300</y>
+           <width>151</width>
+           <height>51</height>
           </rect>
          </property>
+         <property name="styleSheet">
+          <string notr="true">color: #fff;
+background-color: #392fed; border: none;
+border-radius: 10px;
+icon-size: 30px;
+font: 14pt &quot;Bahnschrift&quot;;</string>
+         </property>
          <property name="text">
-          <string>ajouter</string>
+          <string>  Ajouter</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../../../Downloads/plus.png</normaloff>../../../Downloads/plus.png</iconset>
+         </property>
+         <property name="checkable">
+          <bool>false</bool>
          </property>
         </widget>
         <widget class="QComboBox" name="comboBox">
          <property name="geometry">
           <rect>
-           <x>120</x>
-           <y>200</y>
-           <width>201</width>
-           <height>22</height>
+           <x>670</x>
+           <y>210</y>
+           <width>251</width>
+           <height>31</height>
           </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">border: 1px solid gray;
+font: 10pt &quot;Bahnschrift&quot;;</string>
          </property>
          <item>
           <property name="text">
@@ -182,29 +253,32 @@
           </property>
          </item>
         </widget>
-        <widget class="QLabel" name="label_5">
+        <widget class="QLabel" name="label_14">
          <property name="geometry">
           <rect>
-           <x>50</x>
-           <y>260</y>
-           <width>56</width>
-           <height>16</height>
+           <x>-340</x>
+           <y>0</y>
+           <width>1391</width>
+           <height>651</height>
           </rect>
          </property>
          <property name="text">
-          <string>date</string>
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap>../../l.png</pixmap>
          </property>
         </widget>
-        <widget class="QDateEdit" name="dateEdit_date">
-         <property name="geometry">
-          <rect>
-           <x>120</x>
-           <y>260</y>
-           <width>201</width>
-           <height>22</height>
-          </rect>
-         </property>
-        </widget>
+        <zorder>label_14</zorder>
+        <zorder>label</zorder>
+        <zorder>label_2</zorder>
+        <zorder>label_3</zorder>
+        <zorder>label_4</zorder>
+        <zorder>lineEdit_id</zorder>
+        <zorder>lineEdit_nom</zorder>
+        <zorder>lineEdit_capacite</zorder>
+        <zorder>pb_ajouter</zorder>
+        <zorder>comboBox</zorder>
        </widget>
       </widget>
       <widget class="QWidget" name="tab_2">
@@ -215,72 +289,110 @@
         <property name="geometry">
          <rect>
           <x>30</x>
-          <y>40</y>
-          <width>361</width>
-          <height>421</height>
+          <y>240</y>
+          <width>1061</width>
+          <height>371</height>
          </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>poppins</family>
+          <pointsize>-1</pointsize>
+          <underline>false</underline>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
         </property>
        </widget>
        <widget class="QPushButton" name="pushButton">
         <property name="geometry">
          <rect>
-          <x>470</x>
-          <y>50</y>
-          <width>93</width>
-          <height>28</height>
+          <x>950</x>
+          <y>60</y>
+          <width>131</width>
+          <height>41</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">icon-size: 30px;
+color: rgb(181, 74, 83);
+border: 1px solid gray;
+border-radius: 10px;
+font: 10pt &quot;Bahnschrift&quot;;
+
+</string>
         </property>
         <property name="text">
          <string>Supprimer</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>../../iconsu.png</normaloff>../../iconsu.png</iconset>
         </property>
        </widget>
        <widget class="QLabel" name="label_6">
         <property name="geometry">
          <rect>
-          <x>440</x>
-          <y>100</y>
-          <width>31</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>id</string>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="lineEdit_id_supp">
-        <property name="geometry">
-         <rect>
-          <x>470</x>
-          <y>100</y>
-          <width>131</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-       </widget>
-       <widget class="QCheckBox" name="checkBox">
-        <property name="geometry">
-         <rect>
-          <x>470</x>
-          <y>250</y>
-          <width>141</width>
+          <x>810</x>
+          <y>70</y>
+          <width>20</width>
           <height>20</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(214, 214, 214);
+font: 10pt &quot;Bahnschrift&quot;;</string>
+        </property>
+        <property name="text">
+         <string>Id</string>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="radioButton">
+        <property name="geometry">
+         <rect>
+          <x>130</x>
+          <y>160</y>
+          <width>161</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift</family>
+          <pointsize>10</pointsize>
+          <weight>50</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="cursor">
+         <cursorShape>ArrowCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(214, 214, 214);
+border: none;
+font: 10pt;
+font: 10pt &quot;Bahnschrift&quot;;</string>
         </property>
         <property name="text">
          <string>trier par capacité</string>
         </property>
        </widget>
-       <widget class="QCheckBox" name="checkBox_2">
+       <widget class="QRadioButton" name="radioButton_2">
         <property name="geometry">
          <rect>
-          <x>470</x>
-          <y>280</y>
-          <width>83</width>
-          <height>20</height>
+          <x>300</x>
+          <y>160</y>
+          <width>91</width>
+          <height>21</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(214, 214, 214);
+border: none;
+font: 10pt;
+font: 10pt &quot;Bahnschrift&quot;;</string>
         </property>
         <property name="text">
          <string>A-&gt;Z</string>
@@ -289,16 +401,246 @@
        <widget class="QLabel" name="label_7">
         <property name="geometry">
          <rect>
-          <x>450</x>
-          <y>210</y>
-          <width>56</width>
-          <height>16</height>
+          <x>50</x>
+          <y>160</y>
+          <width>61</width>
+          <height>21</height>
          </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift</family>
+          <pointsize>15</pointsize>
+          <weight>50</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+          <underline>false</underline>
+          <strikeout>false</strikeout>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(214, 214, 214);
+border: none;
+font: 15pt &quot;Bahnschrift&quot;;</string>
         </property>
         <property name="text">
          <string>Trier</string>
         </property>
+        <property name="textFormat">
+         <enum>Qt::AutoText</enum>
+        </property>
        </widget>
+       <widget class="QLineEdit" name="lineEdit_nom_3">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>60</y>
+          <width>181</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 1px solid gray;
+border-radius: 10px;</string>
+        </property>
+        <property name="placeholderText">
+         <string>Nom</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_capacite_3">
+        <property name="geometry">
+         <rect>
+          <x>250</x>
+          <y>60</y>
+          <width>241</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 1px solid gray;
+border-radius: 10px;</string>
+        </property>
+        <property name="placeholderText">
+         <string>Capacite</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_4">
+        <property name="geometry">
+         <rect>
+          <x>520</x>
+          <y>60</y>
+          <width>131</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">icon-size: 20px;
+color: #fff;
+background-color: #08976d; border: none;
+border-radius: 10px;
+font: 10pt &quot;Bahnschrift&quot;;</string>
+        </property>
+        <property name="text">
+         <string>Recherche </string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>../../../Downloads/search-interface-symbol (1).png</normaloff>../../../Downloads/search-interface-symbol (1).png</iconset>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_2">
+        <property name="geometry">
+         <rect>
+          <x>650</x>
+          <y>60</y>
+          <width>51</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">icon-size: 30px;
+background-color: rgb(214, 214, 214);
+ border: none;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>../../iconsu.png</normaloff>../../iconsu.png</iconset>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="comboBox_4">
+        <property name="geometry">
+         <rect>
+          <x>840</x>
+          <y>70</y>
+          <width>101</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 1px solid gray;
+font: 10pt &quot;Bahnschrift&quot;;</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_5">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>20</y>
+          <width>741</width>
+          <height>111</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(214, 214, 214);
+border-radius: 10px;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_12">
+        <property name="geometry">
+         <rect>
+          <x>780</x>
+          <y>20</y>
+          <width>321</width>
+          <height>111</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(214, 214, 214);
+border-radius: 10px;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_13">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>150</y>
+          <width>401</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(214, 214, 214);
+border-radius: 10px;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_15">
+        <property name="geometry">
+         <rect>
+          <x>440</x>
+          <y>190</y>
+          <width>241</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift</family>
+          <pointsize>20</pointsize>
+          <weight>50</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+          <underline>false</underline>
+          <strikeout>false</strikeout>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: none;
+font: 20pt &quot;Palatino Linotype&quot;;
+font: 20pt &quot;Bahnschrift&quot;;</string>
+        </property>
+        <property name="text">
+         <string>Liste des  Stades</string>
+        </property>
+        <property name="textFormat">
+         <enum>Qt::AutoText</enum>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_20">
+        <property name="geometry">
+         <rect>
+          <x>-470</x>
+          <y>0</y>
+          <width>1611</width>
+          <height>651</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap>../../l.png</pixmap>
+        </property>
+       </widget>
+       <zorder>label_20</zorder>
+       <zorder>tab_stade</zorder>
+       <zorder>label_5</zorder>
+       <zorder>lineEdit_capacite_3</zorder>
+       <zorder>lineEdit_nom_3</zorder>
+       <zorder>pushButton_4</zorder>
+       <zorder>pushButton_2</zorder>
+       <zorder>label_12</zorder>
+       <zorder>comboBox_4</zorder>
+       <zorder>label_6</zorder>
+       <zorder>pushButton</zorder>
+       <zorder>label_13</zorder>
+       <zorder>radioButton_2</zorder>
+       <zorder>radioButton</zorder>
+       <zorder>label_7</zorder>
+       <zorder>label_15</zorder>
       </widget>
       <widget class="QWidget" name="tab_3">
        <attribute name="title">
@@ -307,10 +649,10 @@
        <widget class="QGroupBox" name="groupBox_2">
         <property name="geometry">
          <rect>
-          <x>110</x>
-          <y>40</y>
-          <width>411</width>
-          <height>371</height>
+          <x>30</x>
+          <y>10</y>
+          <width>951</width>
+          <height>591</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -322,99 +664,110 @@
         <widget class="QLabel" name="label_8">
          <property name="geometry">
           <rect>
-           <x>50</x>
-           <y>40</y>
+           <x>600</x>
+           <y>50</y>
            <width>56</width>
            <height>16</height>
           </rect>
          </property>
+         <property name="styleSheet">
+          <string notr="true">font: 14pt &quot;Bahnschrift&quot;;</string>
+         </property>
          <property name="text">
-          <string>id</string>
+          <string>Id</string>
          </property>
         </widget>
         <widget class="QLabel" name="label_9">
          <property name="geometry">
           <rect>
-           <x>50</x>
-           <y>100</y>
+           <x>600</x>
+           <y>110</y>
            <width>56</width>
            <height>16</height>
           </rect>
          </property>
+         <property name="styleSheet">
+          <string notr="true">font: 14pt &quot;Bahnschrift&quot;;</string>
+         </property>
          <property name="text">
-          <string>nom</string>
+          <string>Nom</string>
          </property>
         </widget>
         <widget class="QLabel" name="label_10">
          <property name="geometry">
           <rect>
-           <x>50</x>
-           <y>150</y>
-           <width>56</width>
-           <height>16</height>
+           <x>580</x>
+           <y>170</y>
+           <width>91</width>
+           <height>21</height>
           </rect>
          </property>
+         <property name="styleSheet">
+          <string notr="true">font: 14pt &quot;Bahnschrift&quot;;</string>
+         </property>
          <property name="text">
-          <string>capacite</string>
+          <string>Capacite</string>
          </property>
         </widget>
         <widget class="QLabel" name="label_11">
          <property name="geometry">
           <rect>
-           <x>50</x>
-           <y>200</y>
+           <x>600</x>
+           <y>230</y>
            <width>56</width>
-           <height>16</height>
+           <height>31</height>
           </rect>
          </property>
-         <property name="text">
-          <string>type</string>
-         </property>
-        </widget>
-        <widget class="QLineEdit" name="lineEdit_id_2">
-         <property name="geometry">
-          <rect>
-           <x>120</x>
-           <y>40</y>
-           <width>201</width>
-           <height>22</height>
-          </rect>
+         <property name="styleSheet">
+          <string notr="true">font: 14pt &quot;Bahnschrift&quot;;</string>
          </property>
          <property name="text">
-          <string/>
+          <string>Type</string>
          </property>
         </widget>
         <widget class="QLineEdit" name="lineEdit_nom_2">
          <property name="geometry">
           <rect>
-           <x>120</x>
-           <y>100</y>
-           <width>201</width>
-           <height>22</height>
+           <x>670</x>
+           <y>110</y>
+           <width>241</width>
+           <height>31</height>
           </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">border: 1px solid gray;
+border-radius: 10px;
+font: 10pt &quot;Bahnschrift&quot;;</string>
          </property>
         </widget>
         <widget class="QLineEdit" name="lineEdit_capacite_2">
          <property name="geometry">
           <rect>
-           <x>120</x>
-           <y>150</y>
-           <width>201</width>
-           <height>22</height>
+           <x>670</x>
+           <y>170</y>
+           <width>241</width>
+           <height>31</height>
           </rect>
          </property>
          <property name="styleSheet">
-          <string notr="true">color: rgb(0, 0, 0);</string>
+          <string notr="true">border: 1px solid gray;
+border-radius: 10px;
+font: 10pt &quot;Bahnschrift&quot;;</string>
          </property>
         </widget>
         <widget class="QComboBox" name="comboBox_2">
          <property name="geometry">
           <rect>
-           <x>120</x>
-           <y>200</y>
-           <width>201</width>
-           <height>22</height>
+           <x>670</x>
+           <y>230</y>
+           <width>241</width>
+           <height>31</height>
           </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">border: 1px solid gray;
+font: 10pt &quot;Bahnschrift&quot;;
+</string>
          </property>
          <item>
           <property name="text">
@@ -427,174 +780,79 @@
           </property>
          </item>
         </widget>
-        <widget class="QLabel" name="label_12">
+        <widget class="QPushButton" name="pb_modifier">
          <property name="geometry">
           <rect>
-           <x>50</x>
-           <y>260</y>
-           <width>56</width>
-           <height>16</height>
+           <x>730</x>
+           <y>310</y>
+           <width>151</width>
+           <height>51</height>
           </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Bahnschrift</family>
+           <pointsize>14</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: #fff;
+background-color: #392fed; border: none;
+border-radius: 10px;
+icon-size: 20px;
+font: 14pt &quot;Bahnschrift&quot;;</string>
          </property>
          <property name="text">
-          <string>date</string>
+          <string>Modifier</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../../../Downloads/editer.png</normaloff>../../../Downloads/editer.png</iconset>
          </property>
         </widget>
-        <widget class="QDateEdit" name="dateEdit_date_2">
+        <widget class="QComboBox" name="comboBox_3">
          <property name="geometry">
           <rect>
-           <x>120</x>
-           <y>260</y>
-           <width>201</width>
-           <height>22</height>
-          </rect>
-         </property>
-        </widget>
-       </widget>
-      </widget>
-      <widget class="QWidget" name="tab_4">
-       <attribute name="title">
-        <string>Recherche un stade</string>
-       </attribute>
-       <widget class="QGroupBox" name="groupBox_3">
-        <property name="geometry">
-         <rect>
-          <x>90</x>
-          <y>20</y>
-          <width>411</width>
-          <height>251</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">border-top-color: rgb(255, 255, 255);</string>
-        </property>
-        <property name="title">
-         <string/>
-        </property>
-        <widget class="QLabel" name="label_13">
-         <property name="geometry">
-          <rect>
-           <x>50</x>
+           <x>670</x>
            <y>50</y>
-           <width>31</width>
-           <height>16</height>
+           <width>241</width>
+           <height>31</height>
           </rect>
          </property>
-         <property name="text">
-          <string>id</string>
+         <property name="styleSheet">
+          <string notr="true">border: 1px solid gray;
+font: 10pt &quot;Bahnschrift&quot;;</string>
          </property>
         </widget>
-        <widget class="QLabel" name="label_14">
+        <widget class="QLabel" name="label_19">
          <property name="geometry">
           <rect>
-           <x>50</x>
-           <y>100</y>
-           <width>56</width>
-           <height>16</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>nom</string>
-         </property>
-        </widget>
-        <widget class="QLabel" name="label_15">
-         <property name="geometry">
-          <rect>
-           <x>50</x>
-           <y>150</y>
-           <width>56</width>
-           <height>16</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>capacite</string>
-         </property>
-        </widget>
-        <widget class="QLineEdit" name="lineEdit_id_3">
-         <property name="geometry">
-          <rect>
-           <x>100</x>
-           <y>50</y>
-           <width>141</width>
-           <height>22</height>
+           <x>-320</x>
+           <y>0</y>
+           <width>1391</width>
+           <height>651</height>
           </rect>
          </property>
          <property name="text">
           <string/>
          </property>
-        </widget>
-        <widget class="QLineEdit" name="lineEdit_nom_3">
-         <property name="geometry">
-          <rect>
-           <x>100</x>
-           <y>100</y>
-           <width>141</width>
-           <height>22</height>
-          </rect>
+         <property name="pixmap">
+          <pixmap>../../l.png</pixmap>
          </property>
         </widget>
-        <widget class="QLineEdit" name="lineEdit_capacite_3">
-         <property name="geometry">
-          <rect>
-           <x>100</x>
-           <y>150</y>
-           <width>141</width>
-           <height>22</height>
-          </rect>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">color: rgb(0, 0, 0);</string>
-         </property>
-        </widget>
-        <widget class="QPushButton" name="pushButton_2">
-         <property name="geometry">
-          <rect>
-           <x>260</x>
-           <y>50</y>
-           <width>141</width>
-           <height>28</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>Recherche par id</string>
-         </property>
-        </widget>
-        <widget class="QPushButton" name="pushButton_3">
-         <property name="geometry">
-          <rect>
-           <x>260</x>
-           <y>150</y>
-           <width>141</width>
-           <height>28</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>Recherche par capacite</string>
-         </property>
-        </widget>
-        <widget class="QPushButton" name="pushButton_4">
-         <property name="geometry">
-          <rect>
-           <x>260</x>
-           <y>100</y>
-           <width>141</width>
-           <height>28</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>Recherche par nom</string>
-         </property>
-        </widget>
-       </widget>
-       <widget class="QTableView" name="tableView">
-        <property name="geometry">
-         <rect>
-          <x>40</x>
-          <y>290</y>
-          <width>571</width>
-          <height>192</height>
-         </rect>
-        </property>
+        <zorder>label_19</zorder>
+        <zorder>label_8</zorder>
+        <zorder>label_9</zorder>
+        <zorder>label_10</zorder>
+        <zorder>label_11</zorder>
+        <zorder>lineEdit_nom_2</zorder>
+        <zorder>lineEdit_capacite_2</zorder>
+        <zorder>comboBox_2</zorder>
+        <zorder>pb_modifier</zorder>
+        <zorder>comboBox_3</zorder>
        </widget>
       </widget>
      </widget>
@@ -608,8 +866,8 @@
        <rect>
         <x>100</x>
         <y>50</y>
-        <width>481</width>
-        <height>471</height>
+        <width>1001</width>
+        <height>601</height>
        </rect>
       </property>
       <widget class="QWidget" name="tab_8">
@@ -626,20 +884,7 @@
          </rect>
         </property>
         <property name="text">
-         <string>Type de match</string>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="lineEdit_id_4">
-        <property name="geometry">
-         <rect>
-          <x>190</x>
-          <y>100</y>
-          <width>161</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string/>
+         <string>id jeux</string>
         </property>
        </widget>
        <widget class="QDateTimeEdit" name="dateTimeEdit">
@@ -647,7 +892,7 @@
          <rect>
           <x>190</x>
           <y>140</y>
-          <width>194</width>
+          <width>181</width>
           <height>22</height>
          </rect>
         </property>
@@ -656,49 +901,13 @@
         <property name="geometry">
          <rect>
           <x>40</x>
-          <y>150</y>
+          <y>140</y>
           <width>91</width>
           <height>20</height>
          </rect>
         </property>
         <property name="text">
          <string>date de match</string>
-        </property>
-       </widget>
-       <widget class="QTableView" name="tableView_2">
-        <property name="geometry">
-         <rect>
-          <x>30</x>
-          <y>230</y>
-          <width>256</width>
-          <height>192</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="pushButton_5">
-        <property name="geometry">
-         <rect>
-          <x>310</x>
-          <y>290</y>
-          <width>131</width>
-          <height>28</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Prediction de resultat</string>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="lineEdit_id_5">
-        <property name="geometry">
-         <rect>
-          <x>190</x>
-          <y>60</y>
-          <width>161</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string/>
         </property>
        </widget>
        <widget class="QLabel" name="label_18">
@@ -711,7 +920,50 @@
          </rect>
         </property>
         <property name="text">
-         <string>nom de l'equipe/athlete</string>
+         <string>id stade</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="comboBox_stadeaff">
+        <property name="geometry">
+         <rect>
+          <x>190</x>
+          <y>60</y>
+          <width>73</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="comboBox_jeuxaff">
+        <property name="geometry">
+         <rect>
+          <x>190</x>
+          <y>100</y>
+          <width>73</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pb_affecterevent">
+        <property name="geometry">
+         <rect>
+          <x>330</x>
+          <y>200</y>
+          <width>93</width>
+          <height>28</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Affecter event</string>
+        </property>
+       </widget>
+       <widget class="QTableView" name="tableView_affectation">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>280</y>
+          <width>551</width>
+          <height>192</height>
+         </rect>
         </property>
        </widget>
       </widget>
@@ -724,7 +976,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>861</width>
+     <width>1226</width>
      <height>26</height>
     </rect>
    </property>

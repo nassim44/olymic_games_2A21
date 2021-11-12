@@ -3,10 +3,15 @@
 #include <QApplication>
 #include <QMessageBox>
 #include "connection.h"
+#include <QSqlQuery>
+#include <QtDebug>
+#include <QSqlQueryModel>
+#include <QObject>
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     Connection c;
+    Stade s;
     bool test=c.createconnection();
     MainWindow w;
     if (test)
