@@ -6,6 +6,7 @@
 //#include "stade.h"
 #include <QIntValidator>
 #include "event.h"
+#include "affecterjoueur.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -20,6 +21,12 @@ MainWindow::MainWindow(QWidget *parent)
     ui->comboBox_4->setModel(sta.getids());
     ui->comboBox_stadeaff->setModel(sta.getids());
     ui->comboBox_jeuxaff->setModel(jeux.getidj());
+    ui->comboBox_idjoueur->setModel(jou.getidjou());
+    ui->comboBox_idevent->setModel(event.getidev());
+    ui->comboBox_predevent->setModel(event.getidev());
+    ui->quickWidget->setSource(QUrl(QStringLiteral("qrc:/Map.qml")));
+    ui->quickWidget->show();
+
 }
 
 MainWindow::~MainWindow()
@@ -137,7 +144,8 @@ void MainWindow::on_pushButton_4_clicked()
 {
     QString nom = ui->lineEdit_nom_3->text();
     QString cap = ui->lineEdit_capacite_3->text();
-    ui->tab_stade->setModel(sta.recherche(nom,cap));
+    QString typestade=ui->comboBox_recherche->currentText();
+    ui->tab_stade->setModel(sta.recherche(nom,cap,typestade));
 }
 
 
@@ -172,19 +180,124 @@ void MainWindow::on_comboBox_jeuxaff_currentIndexChanged(const QString &arg1)
 void MainWindow::on_pb_affecterevent_clicked()
 {
 
-
+    int id_event=ui->lineEdit_idevent->text().toInt();
     int id_stade=ui->comboBox_stadeaff->currentText().toInt();
     int id_jeux=ui->comboBox_jeuxaff->currentText().toInt();
     QDateTime date=ui->dateTimeEdit->dateTime();
 
 
-    Event e(id_stade,id_jeux,date);
+    Event e(id_event,id_stade,id_jeux,date);
 
     QString message = e.ajouterevent();
-    if(QString::compare(message,"Match affecte", Qt::CaseInsensitive) == 0) {
+    ui->tableView_affectation->setModel(event.afficher());
+    if(QString::compare(message,"Match affecte", Qt::CaseInsensitive) == 0)
+    {
+        ui->comboBox_idevent->setModel(event.getidev());
+
+        ui->tableView_affectation->setModel(event.afficher());
         QMessageBox::information(this,"Affectation avec succe",message);
     } else {
         QMessageBox::critical(this,"Affectation non realise",message);
     }
 
+}
+
+
+
+
+void MainWindow::on_comboBox_idjoueur_currentIndexChanged(const QString &arg1)
+{
+    jou.getjoueur((&arg1)->toInt());
+}
+
+void MainWindow::on_pushButton_3_clicked()
+{
+
+
+
+    int id_joueur=ui->comboBox_idjoueur->currentText().toInt();
+    int id_event=ui->comboBox_idevent->currentText().toInt();
+
+    Affecterjoueur A(id_joueur,id_event);
+
+    QString message = A.ajouterjoueurevent();
+
+    if(QString::compare(message,"joueur affecte", Qt::CaseInsensitive) == 0) {
+        ui->comboBox_predevent->setModel(event.getidev());
+        QMessageBox::information(this,"Affectation avec succe",message);
+    } else {
+        QMessageBox::critical(this,"Affectation non realise",message);
+    }
+}
+
+void MainWindow::on_comboBox_idevent_currentIndexChanged(const QString &arg1)
+{
+    Event* e = event.getevent((&arg1)->toInt());
+
+    ui->lineEdit_typeeventaff->setText(e->gettypeevent());
+}
+
+void MainWindow::on_comboBox_predevent_currentIndexChanged(const QString &arg1)
+{
+    event.getevent((&arg1)->toInt());
+}
+
+void MainWindow::on_pushButton_5_clicked()
+{
+    Affecterjoueur A1;
+    A1.modifierprediction(ui->comboBox_predevent->currentText());
+    ui->tableView_affectation->setModel(pred.afficherpredictionevnt(ui->comboBox_predevent->currentText()));
+    QMessageBox::information(nullptr, QObject::tr("OK"),
+                QObject::tr("prediction effectué\n"
+                            "Click Cancel to exit."), QMessageBox::Cancel);
+
+
+
+
+}
+
+void MainWindow::on_pushButton_Afficherevent_clicked()
+{
+    ui->tableView_affectation->setModel(event.afficher());
+}
+
+void MainWindow::on_pushButton_afficherprediction_clicked()
+{
+    ui->tableView_affectation->setModel(pred.afficherprediction());
+}
+
+void MainWindow::on_radioButton_triertype_toggled(bool checked)
+{
+    if (checked == true){
+        ui->tab_stade->setModel(sta.trierpartype());
+    } else {
+         ui->tab_stade->setModel(sta.afficher());
+    }
+}
+
+void MainWindow::on_comboBox_mapidstade_currentIndexChanged(const QString &arg1)
+{
+ sta.getstade((&arg1)->toInt());
+}
+
+
+
+void MainWindow::on_pushButton_affichermap_2_clicked()
+{
+    int cap = ui->comboBox_stadeaff->currentText().toInt();
+    Stade* s=sta.afficherimage(cap);
+    QImage yourImage("C:/Users/asus/Desktop/Nouveau dossier/foot.jpg");
+    QString typeJeu = "Terrain de Football";
+    QString typestade=s->gettype();
+    if(QString::compare(typestade,typeJeu,Qt::CaseInsensitive) == 0)
+    {
+
+         //QLabel image =new QLabel(centralwidget);
+         //ui->label_affichemap->setGeometry(QRect(20, 10, 371, 311));
+         ui->label_affichemap->setPixmap(QPixmap(QPixmap::fromImage(yourImage)));
+    }else
+    {
+        QImage yourImage("C:/Users/asus/Desktop/Nouveau dossier/handball.jpg");
+         ui->label_affichemap->setPixmap(QPixmap(QPixmap::fromImage(yourImage)));
+    }
 }

@@ -99,7 +99,19 @@ QSqlQueryModel* Stade::trierparnom()
 
     return model;
 }
+QSqlQueryModel* Stade::trierpartype()
+{
+    QSqlQueryModel* model=new QSqlQueryModel();
 
+    model->setQuery("SELECT * FROM stade ORDER BY TYPES_STADE ASC");
+    model->setHeaderData(0,Qt::Horizontal, QObject::tr("Identifiant"));
+    model->setHeaderData(1,Qt::Horizontal, QObject::tr("Nom"));
+    model->setHeaderData(2,Qt::Horizontal, QObject::tr("Type Stade"));
+    model->setHeaderData(3,Qt::Horizontal, QObject::tr("Capacite"));
+
+
+    return model;
+}
 QSqlQueryModel* Stade::getids()
 {
 
@@ -128,16 +140,37 @@ Stade* Stade::getstade(int id)
     return s;
 }
 
-QSqlQueryModel* Stade::recherche(QString nom, QString capacite)
+QSqlQueryModel* Stade::recherche(QString nom, QString capacite,QString typestade)
 {
     QSqlQueryModel* model=new QSqlQueryModel();
     QString query = "SELECT * FROM stade ";
-    if((nom != "") && (capacite != "")){
-        query = query + "WHERE NOM_STADE LIKE '%" + nom +"%' AND CAPACITE = " + capacite;
-    } else if((nom != "") && (capacite == "")) {
-        query = query + "WHERE NOM_STADE LIKE '%" + nom +"%'";
-    } else if((nom == "") && (capacite != "")) {
-        query = query + "WHERE CAPACITE = " + capacite;
+
+    if(nom != "") {
+        if(capacite != ""){
+            if(typestade != "Choisir") {
+                query = query + "WHERE NOM_STADE LIKE '%" + nom +"%' AND CAPACITE = " + capacite + " AND TYPES_STADE = '" + typestade + "'";
+            } else {
+                query = query + "WHERE NOM_STADE LIKE '%" + nom +"%' AND CAPACITE = " + capacite;
+            }
+        } else {
+            if(typestade != "Choisir") {
+                query = query + "WHERE NOM_STADE LIKE '%" + nom +"%' AND TYPES_STADE = '" + typestade + "'";
+            } else {
+                query = query + "WHERE NOM_STADE LIKE '%" + nom +"%'";
+            }
+        }
+    } else {
+        if(capacite != ""){
+            if(typestade != "Choisir") {
+                query = query + "WHERE CAPACITE = " + capacite + " AND TYPES_STADE = '" + typestade + "'";
+            } else {
+                query = query + "WHERE CAPACITE = " + capacite;
+            }
+        } else {
+            if(typestade != "Choisir") {
+                query = query + "WHERE TYPES_STADE = '" + typestade + "'";
+            }
+        }
     }
     model->setQuery(query);
     model->setHeaderData(0,Qt::Horizontal, QObject::tr("Identifiant"));
@@ -159,4 +192,23 @@ bool Stade::ajouterevent()
 
 
     return query.exec();
+}
+Stade* Stade::afficherimage(int id)
+{
+    QSqlQuery queryStade;
+    QSqlQuery queryJeu;
+    QSqlQuery queryDateExiste;
+    QSqlQuery queryInsert;
+    QString res=QString::number(id);
+    QString typeStade = "";
+    Stade* s = new Stade();
+
+    //Get type stade
+    queryStade.prepare("SELECT * FROM stade WHERE ID_STADE = :id");
+    queryStade.bindValue(":id",res);
+    queryStade.exec();
+    while(queryStade.next()) {
+        s->settype( queryStade.value(2).toString());
+    }
+    return s;
 }

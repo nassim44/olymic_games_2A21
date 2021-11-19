@@ -27,12 +27,14 @@ public:
     bool modifier(int id);
     QSqlQueryModel* trier();
     QSqlQueryModel* trierparnom();
-    QSqlQueryModel* recherche(QString nom, QString capacite);
+    QSqlQueryModel* trierpartype();
+    QSqlQueryModel* recherche(QString nom, QString capacite,QString typestade);
     QSqlQueryModel* getids();
     Stade* getstade(int id);
     //QSqlQueryModel* getidj();
     //Stade* getjeux(int id);
     bool ajouterevent();
+    Stade* afficherimage(int id);
 };
 
 #endif // STADE_H

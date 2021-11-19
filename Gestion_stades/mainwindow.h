@@ -4,6 +4,8 @@
 #include <QMainWindow>
 #include "jeux.h"
 #include "event.h"
+#include "joueur.h"
+#include "affecterjoueur.h"
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -49,10 +51,34 @@ private slots:
 
     void on_pb_affecterevent_clicked();
 
+
+
+    void on_comboBox_idjoueur_currentIndexChanged(const QString &arg1);
+
+    void on_pushButton_3_clicked();
+
+    void on_comboBox_idevent_currentIndexChanged(const QString &arg1);
+
+    void on_comboBox_predevent_currentIndexChanged(const QString &arg1);
+
+    void on_pushButton_5_clicked();
+
+    void on_pushButton_Afficherevent_clicked();
+
+    void on_pushButton_afficherprediction_clicked();
+
+    void on_radioButton_triertype_toggled(bool checked);
+
+    void on_comboBox_mapidstade_currentIndexChanged(const QString &arg1);
+
+    void on_pushButton_affichermap_2_clicked();
+
 private:
     Ui::MainWindow *ui;
     Stade sta;
     Jeux jeux;
     Event event;
+    Joueur jou;
+    Affecterjoueur pred;
 };
 #endif // MAINWINDOW_H

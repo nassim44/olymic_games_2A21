@@ -7,25 +7,18 @@
 #include <QtDebug>
 #include <QSqlQueryModel>
 #include <QObject>
+#include <QGuiApplication>
+#include <QQmlApplicationEngine>
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     Connection c;
     Stade s;
     bool test=c.createconnection();
+    QQmlApplicationEngine engine;
+    engine.load(QUrl(QStringLiteral("qrc:/Map.qml")));
     MainWindow w;
-    if (test)
-    {
     w.show();
-    QMessageBox::information(nullptr, QObject::tr("database is open"),
-                QObject::tr("connection successful.\n"
-                            "Click Cancel to exit."), QMessageBox::Cancel);
-
-    }
-    else
-        QMessageBox::critical(nullptr, QObject::tr("database is not open"),
-                    QObject::tr("connection failed.\n"
-                                "Click Cancel to exit."), QMessageBox::Cancel);
 
     return a.exec();
 }
