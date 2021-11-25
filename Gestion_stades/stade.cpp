@@ -103,7 +103,8 @@ QSqlQueryModel* Stade::trierpartype()
 {
     QSqlQueryModel* model=new QSqlQueryModel();
 
-    model->setQuery("SELECT * FROM stade ORDER BY TYPES_STADE ASC");
+    model->setQuery("SELECT * FROM stade ORDER BY TYPES_STADE ASC ");
+    //model->setQuery("SELECT * FROM stade ORDER BY TYPES_STADE ASC , CAPACITE ASC ");
     model->setHeaderData(0,Qt::Horizontal, QObject::tr("Identifiant"));
     model->setHeaderData(1,Qt::Horizontal, QObject::tr("Nom"));
     model->setHeaderData(2,Qt::Horizontal, QObject::tr("Type Stade"));
@@ -112,6 +113,49 @@ QSqlQueryModel* Stade::trierpartype()
 
     return model;
 }
+QSqlQueryModel* Stade::trierpartypeetcapacite()
+{
+    QSqlQueryModel* model=new QSqlQueryModel();
+
+    //model->setQuery("SELECT * FROM stade ORDER BY TYPES_STADE ASC ");
+    model->setQuery("SELECT * FROM stade ORDER BY TYPES_STADE ASC , CAPACITE ASC ");
+    model->setHeaderData(0,Qt::Horizontal, QObject::tr("Identifiant"));
+    model->setHeaderData(1,Qt::Horizontal, QObject::tr("Nom"));
+    model->setHeaderData(2,Qt::Horizontal, QObject::tr("Type Stade"));
+    model->setHeaderData(3,Qt::Horizontal, QObject::tr("Capacite"));
+
+
+    return model;
+}
+QSqlQueryModel* Stade::trierpartypeetnom()
+{
+    QSqlQueryModel* model=new QSqlQueryModel();
+
+    //model->setQuery("SELECT * FROM stade ORDER BY TYPES_STADE ASC ");
+    model->setQuery("SELECT * FROM stade ORDER BY TYPES_STADE ASC , NOM_STADE ASC ");
+    model->setHeaderData(0,Qt::Horizontal, QObject::tr("Identifiant"));
+    model->setHeaderData(1,Qt::Horizontal, QObject::tr("Nom"));
+    model->setHeaderData(2,Qt::Horizontal, QObject::tr("Type Stade"));
+    model->setHeaderData(3,Qt::Horizontal, QObject::tr("Capacite"));
+
+
+    return model;
+}
+QSqlQueryModel* Stade::trierparnometcapacite()
+{
+    QSqlQueryModel* model=new QSqlQueryModel();
+
+    //model->setQuery("SELECT * FROM stade ORDER BY TYPES_STADE ASC ");
+    model->setQuery("SELECT * FROM stade ORDER BY CAPACITE ASC , NOM_STADE ASC ");
+    model->setHeaderData(0,Qt::Horizontal, QObject::tr("Identifiant"));
+    model->setHeaderData(1,Qt::Horizontal, QObject::tr("Nom"));
+    model->setHeaderData(2,Qt::Horizontal, QObject::tr("Type Stade"));
+    model->setHeaderData(3,Qt::Horizontal, QObject::tr("Capacite"));
+
+
+    return model;
+}
+
 QSqlQueryModel* Stade::getids()
 {
 

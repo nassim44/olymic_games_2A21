@@ -19,7 +19,8 @@ public:
     float getprediction(){return prediction;}
     void setprediction(float prediction ){this->prediction=prediction;}
     QString ajouterjoueurevent();
-    void modifierprediction(QString idEvent);
+    //void modifierprediction(QString idEvent);
+    void predictionExcel(QString idEvent);
     QSqlQueryModel* afficherprediction();
     QSqlQueryModel* afficherpredictionevnt(QString id);
 };

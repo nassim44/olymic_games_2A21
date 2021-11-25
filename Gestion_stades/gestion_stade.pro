@@ -1,4 +1,4 @@
-QT       += core gui
+QT       += core gui axcontainer
 QT       += sql
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets quickwidgets
 
@@ -22,6 +22,7 @@ SOURCES += \
     event.cpp \
     jeux.cpp \
     joueur.cpp \
+    location.cpp \
     main.cpp \
     mainwindow.cpp \
     stade.cpp
@@ -32,6 +33,7 @@ HEADERS += \
     event.h \
     jeux.h \
     joueur.h \
+    location.h \
     mainwindow.h \
     stade.h
 

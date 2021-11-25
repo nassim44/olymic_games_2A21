@@ -4,6 +4,8 @@
 #include <QSqlQueryModel>
 #include <QObject>
 #include <random>
+#include <QtGui>
+#include <qaxobject.h>
 Affecterjoueur::Affecterjoueur()
 {
     id_event=0;id_jou=0;
@@ -69,7 +71,7 @@ QString Affecterjoueur::ajouterjoueurevent()
     return model;
 }
 */
-void Affecterjoueur::modifierprediction(QString idEvent)
+/*void Affecterjoueur::modifierprediction(QString idEvent)
 {
     QSqlQuery query;
     QSqlQuery queryevent;
@@ -119,6 +121,93 @@ void Affecterjoueur::modifierprediction(QString idEvent)
 
 
 
+}*/
+void Affecterjoueur::predictionExcel(QString idEvent)
+{
+    QString file("D:/Games/Classeur1.xlsx");
+    QSqlQuery queryevent;
+    QSqlQuery query;
+    QString pred;
+    int idJoueuer;
+
+    QAxObject* excel=new QAxObject("Excel.Application");
+    QAxObject* workbooks=excel->querySubObject("Workbooks");
+    QAxObject* workbook=workbooks->querySubObject("Open(const QString&)",file);
+    excel->dynamicCall("SetVisible(bool)",false);
+
+    QAxObject* worksheet=workbook->querySubObject("WorkSheets(int)",1);
+
+    QAxObject* usedrange=worksheet->querySubObject("UsedRange");
+    QAxObject* rows=usedrange->querySubObject("Rows");
+    QAxObject* columns=usedrange->querySubObject("Columns");
+
+    int intRowStart = usedrange->property("Row").toInt();
+    int intColStart = usedrange->property("Column").toInt();
+    int intCols = columns->property("Count").toInt();
+    int intRows = rows->property("Count").toInt();
+
+    queryevent.prepare("SELECT * FROM PREDICTION WHERE ID_EV = :ID_EV");
+    queryevent.bindValue(":ID_EV",idEvent);
+    queryevent.exec();
+
+    while(queryevent.next()) {
+        idJoueuer=queryevent.value(1).toInt();
+        int nbtotalmatch=0;
+        int win=0;
+        for(int row=0;row<intRows;row++)
+        {
+
+            QAxObject* cell=worksheet->querySubObject("Cells(int,int)",row+1,1);
+            QVariant value = cell->dynamicCall("Value()");
+
+            if(idJoueuer == value.toInt() )
+            {
+                    QAxObject* cell1=worksheet->querySubObject("Cells(int,int)",row+1,2);
+                    QVariant value1 = cell1->dynamicCall("Value()");
+                    if(value1.toString()=="win")
+                    {
+                        win++;
+                        nbtotalmatch++;
+                    }else
+                    {
+                        nbtotalmatch++;
+                    }
+            }
+
+        }
+        pred =((win/nbtotalmatch)*100);
+
+        query.prepare("UPDATE PREDICTION SET  PREDICTION=:PREDICTION where ID_EV = :ID_EV AND ID_JOU= :ID_JOU");
+        query.bindValue (":PREDICTION",(int)((win/(double)nbtotalmatch)*100));
+        query.bindValue (":ID_EV",idEvent);
+        query.bindValue (":ID_JOU",QString::number(idJoueuer));
+        query.exec();
+    }
+
+
+    /*for(int row=0;row<intRows;row++)
+    {
+        int nbtotalmatch=0;
+        int win=0;
+        QAxObject* cell=worksheet->querySubObject("Cells(int,int)",row+1,1);
+        QVariant value = cell->dynamicCall("Value()");
+        if(idEvent == value.toString() )
+        {
+                QAxObject* cell1=worksheet->querySubObject("Cells(int,int)",row+1,2);
+                QVariant value1 = cell1->dynamicCall("Value()");
+                if(value1.toString()=="win")
+                {
+                    win++;
+                    nbtotalmatch++;
+                }else
+                {
+                    nbtotalmatch++;
+                }
+        }
+    }*/
+
+    workbook->dynamicCall("Close");
+    excel->dynamicCall("Quit()");
 }
 QSqlQueryModel* Affecterjoueur::afficherprediction()
 {

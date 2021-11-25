@@ -9,6 +9,7 @@ private:
     QString nom,type;
     int id ,capacite;
 
+
 public:
     Stade();
     Stade(int,int,QString,QString);
@@ -35,6 +36,11 @@ public:
     //Stade* getjeux(int id);
     bool ajouterevent();
     Stade* afficherimage(int id);
+    QSqlQueryModel* trierpartypeetcapacite();
+    QSqlQueryModel* trierpartypeetnom();
+    QSqlQueryModel* trierparnometcapacite();
+    double location;
+
 };
 
 #endif // STADE_H

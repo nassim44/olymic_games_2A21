@@ -29,9 +29,9 @@ private slots:
 
     void on_pb_modifier_clicked();
 
-    void on_radioButton_toggled(bool checked);
+   // void on_radioButton_toggled(bool checked);
 
-    void on_radioButton_2_toggled(bool checked);
+   // void on_radioButton_2_toggled(bool checked);
 
     void on_comboBox_3_currentIndexChanged(const QString &arg1);
 
@@ -67,11 +67,17 @@ private slots:
 
     void on_pushButton_afficherprediction_clicked();
 
-    void on_radioButton_triertype_toggled(bool checked);
+   // void on_radioButton_triertype_toggled(bool checked);
 
     void on_comboBox_mapidstade_currentIndexChanged(const QString &arg1);
 
     void on_pushButton_affichermap_2_clicked();
+
+    void on_checkBox_trierparcapacite_toggled(bool checked);
+
+    void on_checkBox_trirerparlettre_toggled(bool checked);
+
+    void on_checkBox_triertypestade_toggled(bool checked);
 
 private:
     Ui::MainWindow *ui;

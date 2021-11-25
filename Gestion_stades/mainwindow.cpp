@@ -24,6 +24,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->comboBox_idjoueur->setModel(jou.getidjou());
     ui->comboBox_idevent->setModel(event.getidev());
     ui->comboBox_predevent->setModel(event.getidev());
+    //ui->checkBox_trierparcapacite->setChecked(true);
     ui->quickWidget->setSource(QUrl(QStringLiteral("qrc:/Map.qml")));
     ui->quickWidget->show();
 
@@ -111,23 +112,22 @@ void MainWindow::on_pb_modifier_clicked()
 
 }
 
-void MainWindow::on_radioButton_toggled(bool checked)
+/*void MainWindow::on_radioButton_toggled(bool checked)
 {
     if (checked == true){
         ui->tab_stade->setModel(sta.trier());
     } else {
          ui->tab_stade->setModel(sta.afficher());
     }
-}
-
-void MainWindow::on_radioButton_2_toggled(bool checked)
+}*/
+/*void MainWindow::on_radioButton_2_toggled(bool checked)
 {
     if (checked == true){
         ui->tab_stade->setModel(sta.trierparnom());
     } else {
          ui->tab_stade->setModel(sta.afficher());
     }
-}
+}*/
 
 void MainWindow::on_comboBox_3_currentIndexChanged(const QString &arg1)
 {
@@ -245,7 +245,7 @@ void MainWindow::on_comboBox_predevent_currentIndexChanged(const QString &arg1)
 void MainWindow::on_pushButton_5_clicked()
 {
     Affecterjoueur A1;
-    A1.modifierprediction(ui->comboBox_predevent->currentText());
+    A1.predictionExcel(ui->comboBox_predevent->currentText());
     ui->tableView_affectation->setModel(pred.afficherpredictionevnt(ui->comboBox_predevent->currentText()));
     QMessageBox::information(nullptr, QObject::tr("OK"),
                 QObject::tr("prediction effectué\n"
@@ -266,14 +266,14 @@ void MainWindow::on_pushButton_afficherprediction_clicked()
     ui->tableView_affectation->setModel(pred.afficherprediction());
 }
 
-void MainWindow::on_radioButton_triertype_toggled(bool checked)
+/*void MainWindow::on_radioButton_triertype_toggled(bool checked)
 {
     if (checked == true){
         ui->tab_stade->setModel(sta.trierpartype());
     } else {
          ui->tab_stade->setModel(sta.afficher());
     }
-}
+}*/
 
 void MainWindow::on_comboBox_mapidstade_currentIndexChanged(const QString &arg1)
 {
@@ -299,5 +299,46 @@ void MainWindow::on_pushButton_affichermap_2_clicked()
     {
         QImage yourImage("C:/Users/asus/Desktop/Nouveau dossier/handball.jpg");
          ui->label_affichemap->setPixmap(QPixmap(QPixmap::fromImage(yourImage)));
+    }
+}
+
+void MainWindow::on_checkBox_trierparcapacite_toggled(bool checked)
+{
+    if (checked == true){
+        ui->tab_stade->setModel(sta.trier());
+    } else {
+         ui->tab_stade->setModel(sta.afficher());
+    }if(ui->checkBox_triertypestade->isChecked())
+    {
+         ui->tab_stade->setModel(sta.trierpartypeetcapacite());
+    }
+}
+
+void MainWindow::on_checkBox_trirerparlettre_toggled(bool checked)
+{
+    if (checked == true){
+        ui->tab_stade->setModel(sta.trierparnom());
+    } else {
+         ui->tab_stade->setModel(sta.afficher());
+    }if(ui->checkBox_triertypestade->isChecked())
+    {
+         ui->tab_stade->setModel(sta.trierpartypeetnom());
+    }
+
+}
+
+void MainWindow::on_checkBox_triertypestade_toggled(bool checked)
+{
+    if (checked == true){
+        ui->tab_stade->setModel(sta.trierpartype());
+    } else {
+         ui->tab_stade->setModel(sta.afficher());
+    }
+    if(ui->checkBox_trierparcapacite->isChecked())
+    {
+         ui->tab_stade->setModel(sta.trierpartypeetcapacite());
+    }if(ui->checkBox_trirerparlettre->isChecked())
+    {
+         ui->tab_stade->setModel(sta.trierpartypeetnom());
     }
 }
