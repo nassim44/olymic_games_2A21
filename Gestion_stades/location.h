@@ -6,7 +6,7 @@
 class Location : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(double location READ location WRITE setLocation NOTIFY locationChanged)
+    Q_PROPERTY(double location READ location WRITE setLocation NOTIFY locationChanged);
 public:
     explicit Location(QObject *parent = nullptr);
 

@@ -41,6 +41,7 @@ public:
     QSqlQueryModel* trierparnometcapacite();
     double location;
 
+
 };
 
 #endif // STADE_H

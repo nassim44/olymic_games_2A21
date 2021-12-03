@@ -29,7 +29,7 @@ font-size: 14px;
 </string>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="tab_5">
      <attribute name="title">
