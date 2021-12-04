@@ -4,7 +4,8 @@
 #
 #-------------------------------------------------
 
-QT       += core gui sql
+QT       += core gui sql network
+QT       += core gui charts #-----satistiques
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -25,19 +26,25 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+    admin.cpp \
     gestion_des_jeux.cpp \
-    jeux.cpp \
         main.cpp \
         mainwindow.cpp \
-    connection.cpp
+    connection.cpp \
+    olympic_games.cpp \
+    smtp.cpp
 
 HEADERS += \
+    admin.h \
     gestion_des_jeux.h \
-    jeux.h \
         mainwindow.h \
-    connection.h
+    connection.h \
+    olympic_games.h \
+    olympic_games.h \
+    smtp.h
 
 FORMS += \
+        admin.ui \
         gestion_des_jeux.ui \
         mainwindow.ui
 
