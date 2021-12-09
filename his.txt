@@ -1,0 +1,27 @@
+ID joueur:1234567
+nom :cyrine
+pays:Tun
+ID joueur:999
+nom :h
+pays:Tun
+ID joueur:
+nom :
+pays:Tun
+ID joueur:12345
+nom :HEDI
+pays:Tun
+ID joueur:234
+nom :SAHAR
+pays:Tun
+ID joueur:23467
+nom :SAHARHH
+pays:Tun
+ID joueur:12456
+nom :AZE
+pays:Tun
+ID joueur:65
+nom :AZE
+pays:FR
+ID joueur:34
+nom :FE
+pays:USA
