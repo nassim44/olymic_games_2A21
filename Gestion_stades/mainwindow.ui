@@ -29,7 +29,7 @@ font-size: 14px;
 </string>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="tab_5">
      <attribute name="title">
@@ -869,6 +869,16 @@ font: 10pt &quot;Bahnschrift&quot;;</string>
          <string>Trier par type de stade</string>
         </property>
        </widget>
+       <widget class="QLineEdit" name="lineEdit_ard">
+        <property name="geometry">
+         <rect>
+          <x>840</x>
+          <y>30</y>
+          <width>113</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
        <zorder>label_20</zorder>
        <zorder>tab_stade</zorder>
        <zorder>label_5</zorder>
@@ -888,6 +898,7 @@ font: 10pt &quot;Bahnschrift&quot;;</string>
        <zorder>checkBox_trierparcapacite</zorder>
        <zorder>checkBox_trirerparlettre</zorder>
        <zorder>checkBox_triertypestade</zorder>
+       <zorder>lineEdit_ard</zorder>
       </widget>
      </widget>
     </widget>

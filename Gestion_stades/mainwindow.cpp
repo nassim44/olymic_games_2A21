@@ -13,6 +13,18 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    int ret=A.connect_arduino(); // lancer la connexion à arduino
+    switch(ret){
+    case(0):qDebug()<< "arduino is available and connected to : "<< A.getarduino_port_name();
+        break;
+    case(1):qDebug() << "arduino is available but not connected to :" <<A.getarduino_port_name();
+       break;
+    case(-1):qDebug() << "arduino is not available";
+    }
+     QObject::connect(A.getserial(),SIGNAL(readyRead()),this,SLOT(update_label())); // permet de lancer
+     //le slot update_label suite à la reception du signal readyRead (reception des données).
+QObject::connect(A.getserial(),SIGNAL(readyRead()),this,SLOT(verifiercode()));
+
     ui->lineEdit_id->setValidator(new QIntValidator(0,99999999,this));
     ui->lineEdit_capacite->setValidator(new QIntValidator(0,99999999,this));
     ui->tab_stade->setModel(sta.afficher());
@@ -331,6 +343,17 @@ void MainWindow::on_checkBox_triertypestade_toggled(bool checked)
 {
     if (checked == true){
         ui->tab_stade->setModel(sta.trierpartype());
+        //ui->label_arduino->setText("ON");
+        /*A.write_to_arduino("1");
+        data=A.read_from_arduino();
+        QByteArray code=jou.verifier_code_bd(data);
+        if(code != "code n'existe pas")
+            //A.write_to_arduino(code);
+            qDebug() << "arduino";
+        else if (data=="code n'existe pas")
+            //A.write_to_arduino("You can't enter");
+        qDebug() << "arduino is not";*/
+
     } else {
          ui->tab_stade->setModel(sta.afficher());
     }
@@ -342,3 +365,44 @@ void MainWindow::on_checkBox_triertypestade_toggled(bool checked)
          ui->tab_stade->setModel(sta.trierpartypeetnom());
     }
 }
+
+//------------------------- arduino-----------------------------
+/*void MainWindow::verifiercode()
+{
+    data=A.read_from_arduino();
+    QByteArray code=jou.verifier_code_bd(data);
+    if(code != "code n'existe pas")
+        //A.write_to_arduino(code);
+        qDebug() << "arduino";
+    else if (data=="code n'existe pas")
+        //A.write_to_arduino("You can't enter");
+    qDebug() << "arduino is not";
+}*/
+void MainWindow::update_label()
+{
+    data=A.read_from_arduino();
+    qDebug() << data;
+
+//QString dataasstring=QString(data);
+QByteArray code=jou.verifier_code_bd(data);
+if(code != "code n'existe pas"){
+    A.write_to_arduino("1");
+    qDebug() << "mawjoud fel base de données";
+    QMessageBox::information(nullptr, QObject::tr("arduino"),
+                    QObject::tr("carte existe\n"
+                                "Click Cancel to exit."), QMessageBox::Cancel);
+
+}
+if(code =="code n'existe pas")
+{
+
+    qDebug() << "mehouch mawjoud fel BD";
+QMessageBox::information(nullptr, QObject::tr("arduino"),
+                QObject::tr("carte n'existe pas\n"
+                            "Click Cancel to exit."), QMessageBox::Cancel);
+}
+
+        ui->lineEdit_ard->setText(data);
+
+}
+

@@ -23,6 +23,7 @@ public:
         void setPays(QString pays){this->pays=pays;}
         QSqlQueryModel* getidjou();
         Joueur* getjoueur(int id);
+        QByteArray verifier_code_bd(QByteArray);
 };
 
 #endif // JOUEUR_H

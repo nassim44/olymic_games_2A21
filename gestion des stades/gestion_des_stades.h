@@ -1,29 +1,35 @@
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
+#ifndef GESTION_DES_STADES_H
+#define GESTION_DES_STADES_H
+#include"olympic_games.h"//perso fedi
 #include "stade.h"
 #include <QMainWindow>
-#include "jeux.h"
 #include "event.h"
-#include "joueur.h"
-#include "affecterjoueur.h"
-#include "arduino.h"
+//#include "joueur.h"
+//#include "affecterjoueur.h"
 QT_BEGIN_NAMESPACE
-namespace Ui { class MainWindow; }
-QT_END_NAMESPACE
 
-class MainWindow : public QMainWindow
+namespace Ui {
+class gestion_des_stades;
+}
+
+class gestion_des_stades : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    MainWindow(QWidget *parent = nullptr);
-    ~MainWindow();
+    explicit gestion_des_stades(QWidget *parent = nullptr);
+    ~gestion_des_stades();
 
-private slots:
+private:
+    Ui::gestion_des_stades *ui;
+    Stade sta;
+    Event EV;
+    olympic_games og;
 
-
-    //void on_pushButton_supprimer_clicked();
-
+   // Event event;
+    //Joueur jou;
+    //Affecterjoueur pred;v
+private slots :
     void on_pb_ajouter_clicked();
 
     void on_pushButton_clicked();
@@ -80,20 +86,7 @@ private slots:
 
     void on_checkBox_triertypestade_toggled(bool checked);
 
-    //----------ARDUINO-------------
-    void verifiercode();
-    void update_label();
-
-
-private:
-    Ui::MainWindow *ui;
-    Stade sta;
-    Jeux jeux;
-    Event event;
-    Joueur jou;
-    Affecterjoueur pred;
-    QByteArray data; // variable contenant les données reçues
-
-    Arduino A; // objet temporaire
+    void on_pushButton_6_clicked();
 };
-#endif // MAINWINDOW_H
+
+#endif // GESTION_DES_STADES_H

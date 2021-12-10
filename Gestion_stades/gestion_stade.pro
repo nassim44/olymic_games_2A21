@@ -1,5 +1,6 @@
 QT       += core gui axcontainer
 QT       += sql
+QT       += serialport
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets quickwidgets
 
 CONFIG += c++11
@@ -18,6 +19,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     affecterjoueur.cpp \
+    arduino.cpp \
     connection.cpp \
     event.cpp \
     jeux.cpp \
@@ -29,6 +31,7 @@ SOURCES += \
 
 HEADERS += \
     affecterjoueur.h \
+    arduino.h \
     connection.h \
     event.h \
     jeux.h \

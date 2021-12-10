@@ -1,0 +1,260 @@
+#include "stade.h"
+#include <QSqlQuery>
+#include <QtDebug>
+#include <QSqlQueryModel>
+#include <QObject>
+#include <QList>
+Stade::Stade()
+{
+    id=0;capacite=0;nom="";type="";
+}
+Stade::Stade(int id ,QString nom,QString type,int capacite)
+{
+    this->id=id;
+    this->nom=nom;
+    this->capacite=capacite;
+    this->type=type;
+}
+bool Stade::ajouter()
+{
+
+    QSqlQuery query;
+    QString res=QString::number(id);
+    QString cap=QString::number(capacite);
+
+    query.prepare("INSERT INTO STADE (ID_STADE,NOM_STADE,TYPES_STADES,CAPACITE) "
+                  "values (:ID_STADE,:NOM_STADE,:TYPES_STADES,:CAPACITE)");
+    query.bindValue (":ID_STADE",res);
+    query.bindValue(":NOM_STADE",nom);
+
+    query.bindValue(":TYPES_STADES",type);
+     query.bindValue(":CAPACITE",capacite);
+
+
+    return query.exec();
+}
+bool Stade::supprimer(int id)
+{
+    QSqlQuery query;
+    QSqlQuery queryevent;
+
+    queryevent.prepare("Delete from event where ID_STADE=:ID_STADE");
+    queryevent.bindValue(":ID_STADE",id);
+    queryevent.exec();
+
+    query.prepare("Delete from stade where ID_STADE=:ID_STADE");
+    query.bindValue(":ID_STADE",id);
+    return query.exec();
+}
+QSqlQueryModel* Stade::afficher()
+{
+    QSqlQueryModel* model=new QSqlQueryModel();
+
+    model->setQuery("SELECT* FROM stade");
+    model->setHeaderData(0,Qt::Horizontal, QObject::tr("Identifiant"));
+    model->setHeaderData(1,Qt::Horizontal, QObject::tr("Nom"));
+    model->setHeaderData(2,Qt::Horizontal, QObject::tr("Type Stade"));
+    model->setHeaderData(3,Qt::Horizontal, QObject::tr("Capacite"));
+
+
+    return model;
+}
+bool Stade::modifier(int id)
+{
+    QSqlQuery query;
+    QString res=QString::number(id);
+    QString cap=QString::number(capacite);
+
+    query.prepare("UPDATE STADE SET  NOM_STADE=:NOM_STADE , CAPACITE=:CAPACITE, TYPES_STADES=:TYPES_STADE where ID_STADE = :ID_STADE");
+    query.bindValue (":ID_STADE",res);
+    query.bindValue(":NOM_STADE",nom);
+    query.bindValue(":CAPACITE",cap);
+    query.bindValue(":TYPES_STADES",type);
+    return query.exec();
+
+
+}
+QSqlQueryModel* Stade::trier()
+{
+    QSqlQueryModel* model=new QSqlQueryModel();
+
+    model->setQuery("SELECT * FROM stade ORDER BY CAPACITE ASC");
+    model->setHeaderData(0,Qt::Horizontal, QObject::tr("Identifiant"));
+    model->setHeaderData(1,Qt::Horizontal, QObject::tr("Nom"));
+    model->setHeaderData(2,Qt::Horizontal, QObject::tr("Type Stade"));
+    model->setHeaderData(3,Qt::Horizontal, QObject::tr("Capacite"));
+
+
+    return model;
+}
+
+QSqlQueryModel* Stade::trierparnom()
+{
+    QSqlQueryModel* model=new QSqlQueryModel();
+
+    model->setQuery("SELECT * FROM stade ORDER BY NOM_STADE ASC");
+    model->setHeaderData(0,Qt::Horizontal, QObject::tr("Identifiant"));
+    model->setHeaderData(1,Qt::Horizontal, QObject::tr("Nom"));
+    model->setHeaderData(2,Qt::Horizontal, QObject::tr("Type Stade"));
+    model->setHeaderData(3,Qt::Horizontal, QObject::tr("Capacite"));
+
+
+    return model;
+}
+QSqlQueryModel* Stade::trierpartype()
+{
+    QSqlQueryModel* model=new QSqlQueryModel();
+
+    model->setQuery("SELECT * FROM stade ORDER BY TYPES_STADE ASC ");
+    //model->setQuery("SELECT * FROM stade ORDER BY TYPES_STADE ASC , CAPACITE ASC ");
+    model->setHeaderData(0,Qt::Horizontal, QObject::tr("Identifiant"));
+    model->setHeaderData(1,Qt::Horizontal, QObject::tr("Nom"));
+    model->setHeaderData(2,Qt::Horizontal, QObject::tr("Type Stade"));
+    model->setHeaderData(3,Qt::Horizontal, QObject::tr("Capacite"));
+
+
+    return model;
+}
+QSqlQueryModel* Stade::trierpartypeetcapacite()
+{
+    QSqlQueryModel* model=new QSqlQueryModel();
+
+    //model->setQuery("SELECT * FROM stade ORDER BY TYPES_STADE ASC ");
+    model->setQuery("SELECT * FROM stade ORDER BY TYPES_STADE ASC , CAPACITE ASC ");
+    model->setHeaderData(0,Qt::Horizontal, QObject::tr("Identifiant"));
+    model->setHeaderData(1,Qt::Horizontal, QObject::tr("Nom"));
+    model->setHeaderData(2,Qt::Horizontal, QObject::tr("Type Stade"));
+    model->setHeaderData(3,Qt::Horizontal, QObject::tr("Capacite"));
+
+
+    return model;
+}
+QSqlQueryModel* Stade::trierpartypeetnom()
+{
+    QSqlQueryModel* model=new QSqlQueryModel();
+
+    //model->setQuery("SELECT * FROM stade ORDER BY TYPES_STADE ASC ");
+    model->setQuery("SELECT * FROM stade ORDER BY TYPES_STADE ASC , NOM_STADE ASC ");
+    model->setHeaderData(0,Qt::Horizontal, QObject::tr("Identifiant"));
+    model->setHeaderData(1,Qt::Horizontal, QObject::tr("Nom"));
+    model->setHeaderData(2,Qt::Horizontal, QObject::tr("Type Stade"));
+    model->setHeaderData(3,Qt::Horizontal, QObject::tr("Capacite"));
+
+
+    return model;
+}
+QSqlQueryModel* Stade::trierparnometcapacite()
+{
+    QSqlQueryModel* model=new QSqlQueryModel();
+
+    //model->setQuery("SELECT * FROM stade ORDER BY TYPES_STADE ASC ");
+    model->setQuery("SELECT * FROM stade ORDER BY CAPACITE ASC , NOM_STADE ASC ");
+    model->setHeaderData(0,Qt::Horizontal, QObject::tr("Identifiant"));
+    model->setHeaderData(1,Qt::Horizontal, QObject::tr("Nom"));
+    model->setHeaderData(2,Qt::Horizontal, QObject::tr("Type Stade"));
+    model->setHeaderData(3,Qt::Horizontal, QObject::tr("Capacite"));
+
+
+    return model;
+}
+
+QSqlQueryModel* Stade::getids()
+{
+
+    QSqlQueryModel* model=new QSqlQueryModel();
+
+    model->setQuery("SELECT ID_STADE FROM stade");
+    model->setHeaderData(0,Qt::Horizontal, QObject::tr("Identifiant"));
+
+
+    return model;
+}
+
+Stade* Stade::getstade(int id)
+{
+    QSqlQuery query;
+    query.prepare("SELECT * FROM stade WHERE ID_STADE = :id");
+    query.bindValue(":id",id);
+    query.exec();
+    Stade* s = new Stade();
+    while (query.next()) {
+            s->setid(query.value(0).toInt());
+            s->setnom(query.value(1).toString());
+            s->settype(query.value(2).toString());
+            s->setcapacite(query.value(3).toInt());
+        }
+    return s;
+}
+
+QSqlQueryModel* Stade::recherche(QString nom, QString capacite,QString typestade)
+{
+    QSqlQueryModel* model=new QSqlQueryModel();
+    QString query = "SELECT * FROM stade ";
+
+    if(nom != "") {
+        if(capacite != ""){
+            if(typestade != "Choisir") {
+                query = query + "WHERE NOM_STADE LIKE '%" + nom +"%' AND CAPACITE = " + capacite + " AND TYPES_STADE = '" + typestade + "'";
+            } else {
+                query = query + "WHERE NOM_STADE LIKE '%" + nom +"%' AND CAPACITE = " + capacite;
+            }
+        } else {
+            if(typestade != "Choisir") {
+                query = query + "WHERE NOM_STADE LIKE '%" + nom +"%' AND TYPES_STADE = '" + typestade + "'";
+            } else {
+                query = query + "WHERE NOM_STADE LIKE '%" + nom +"%'";
+            }
+        }
+    } else {
+        if(capacite != ""){
+            if(typestade != "Choisir") {
+                query = query + "WHERE CAPACITE = " + capacite + " AND TYPES_STADE = '" + typestade + "'";
+            } else {
+                query = query + "WHERE CAPACITE = " + capacite;
+            }
+        } else {
+            if(typestade != "Choisir") {
+                query = query + "WHERE TYPES_STADE = '" + typestade + "'";
+            }
+        }
+    }
+    model->setQuery(query);
+    model->setHeaderData(0,Qt::Horizontal, QObject::tr("Identifiant"));
+    model->setHeaderData(1,Qt::Horizontal, QObject::tr("Nom"));
+    model->setHeaderData(2,Qt::Horizontal, QObject::tr("Type Stade"));
+    model->setHeaderData(3,Qt::Horizontal, QObject::tr("Capacite"));
+
+
+    return model;
+}
+bool Stade::ajouterevent()
+{
+
+    QSqlQuery query;
+    QString res=QString::number(id);
+    query.prepare("INSERT INTO event (ID_STADE) values (:ID_STADE)");
+    query.bindValue (":ID_STADE",res);
+
+
+
+    return query.exec();
+}
+Stade* Stade::afficherimage(int id)
+{
+    QSqlQuery queryStade;
+    QSqlQuery queryJeu;
+    QSqlQuery queryDateExiste;
+    QSqlQuery queryInsert;
+    QString res=QString::number(id);
+    QString typeStade = "";
+    Stade* s = new Stade();
+
+    //Get type stade
+    queryStade.prepare("SELECT * FROM stade WHERE ID_STADE = :id");
+    queryStade.bindValue(":id",res);
+    queryStade.exec();
+    while(queryStade.next()) {
+        s->settype( queryStade.value(2).toString());
+    }
+    return s;
+}

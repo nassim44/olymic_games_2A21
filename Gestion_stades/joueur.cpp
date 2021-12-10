@@ -36,3 +36,27 @@ Joueur* Joueur::getjoueur(int id)
         }
     return jou;
 }
+QByteArray Joueur::verifier_code_bd(QByteArray data)
+{
+    QSqlQuery querycode;
+    QString nomJoueur = "";
+
+    //if there is a problem remove ligne number 44
+
+    QString Data = QString(data);
+    querycode.prepare("SELECT * FROM joueur WHERE CODE_CARTE = :Data");
+    querycode.bindValue(":Data",Data);
+    querycode.exec();
+    if(querycode.next()==false)
+    {
+        return "code n'existe pas";
+    }else
+    {
+        while(querycode.next()) {
+            nomJoueur = querycode.value(5).toString();
+        }
+        data=nomJoueur.toLocal8Bit();
+        return data;
+    }
+
+}
