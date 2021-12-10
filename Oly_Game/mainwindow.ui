@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="Supprimer">
+    <property name="geometry">
+     <rect>
+      <x>580</x>
+      <y>370</y>
+      <width>81</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 2px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #006699;
+font: bold, &quot;Comic Sans MS&quot;;;
+text-align:center;
+color:#FFFFFF;
+border-color:#FFFFFF;
+</string>
+    </property>
+    <property name="text">
+     <string>Supprimer</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="ajout">
+    <property name="geometry">
+     <rect>
+      <x>540</x>
+      <y>330</y>
+      <width>71</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 2px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #006699;
+font: bold, &quot;Comic Sans MS&quot;;;
+text-align:center;
+color:#FFFFFF;
+border-color:#FFFFFF;</string>
+    </property>
+    <property name="text">
+     <string>Ajouter</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>140</y>
+      <width>91</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 2px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #FFFFFF;
+font: bold, &quot;Comic Sans MS&quot;;;
+text-align:center;</string>
+    </property>
+    <property name="text">
+     <string>ID</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="li_id">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>140</y>
+      <width>131</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 2px solid black;
+border-radius: 10px;
+padding: 0 8px;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_8">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>230</y>
+      <width>91</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 2px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #FFFFFF;
+font: bold, &quot;Comic Sans MS&quot;;;
+text-align:center;</string>
+    </property>
+    <property name="text">
+     <string>total</string>
+    </property>
+   </widget>
+   <widget class="QTableView" name="show_fact">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>140</y>
+      <width>391</width>
+      <height>261</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 5px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #e6e6e6;
+selection-background-color: gray;
+font: bold, &quot;Comic Sans MS&quot;;
+border-color: #FFFFFF
+</string>
+    </property>
+    <property name="sortingEnabled">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_7">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>200</y>
+      <width>91</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 2px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #FFFFFF;
+font: bold, &quot;Comic Sans MS&quot;;;
+text-align:center;</string>
+    </property>
+    <property name="text">
+     <string>designation</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="li_designation">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>200</y>
+      <width>131</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 2px solid black;
+border-radius: 10px;
+padding: 0 8px;</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="li_total">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>230</y>
+      <width>131</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 2px solid black;
+border-radius: 10px;
+padding: 0 8px;</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="modifier">
+    <property name="geometry">
+     <rect>
+      <x>620</x>
+      <y>330</y>
+      <width>71</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 2px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #006699;
+font: bold, &quot;Comic Sans MS&quot;;;
+text-align:center;
+color:#FFFFFF;
+border-color:#FFFFFF;</string>
+    </property>
+    <property name="text">
+     <string>Modifier</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_6">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>170</y>
+      <width>91</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 2px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #FFFFFF;
+font: bold, &quot;Comic Sans MS&quot;;;
+text-align:center;
+</string>
+    </property>
+    <property name="text">
+     <string>date</string>
+    </property>
+   </widget>
+   <widget class="QDateTimeEdit" name="li_date">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>170</y>
+      <width>131</width>
+      <height>22</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="li_prix">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>260</y>
+      <width>131</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 2px solid black;
+border-radius: 10px;
+padding: 0 8px;</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_9">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>260</y>
+      <width>91</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 2px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #FFFFFF;
+font: bold, &quot;Comic Sans MS&quot;;;
+text-align:center;</string>
+    </property>
+    <property name="text">
+     <string>prix</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="li_qt">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>290</y>
+      <width>131</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 2px solid black;
+border-radius: 10px;
+padding: 0 8px;</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_10">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>290</y>
+      <width>91</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 2px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #FFFFFF;
+font: bold, &quot;Comic Sans MS&quot;;;
+text-align:center;</string>
+    </property>
+    <property name="text">
+     <string>quantite</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="stat">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>410</y>
+      <width>81</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 2px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #006699;
+font: bold, &quot;Comic Sans MS&quot;;;
+text-align:center;
+color:#FFFFFF;
+border-color:#FFFFFF;</string>
+    </property>
+    <property name="text">
+     <string>Stat</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="ajout_2">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>100</y>
+      <width>81</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 2px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #006699;
+font: bold, &quot;Comic Sans MS&quot;;;
+text-align:center;
+color:#FFFFFF;
+border-color:#FFFFFF;</string>
+    </property>
+    <property name="text">
+     <string>Chercher</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="li_chercher">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>100</y>
+      <width>131</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 2px solid black;
+border-radius: 10px;
+padding: 0 8px;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="TRI_date">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>410</y>
+      <width>97</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TRI Date</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="TRI_prix">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>410</y>
+      <width>97</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TRI_prix</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="PDF">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>410</y>
+      <width>81</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 2px solid black;
+border-radius: 10px;
+padding: 0 8px;
+background: #006699;
+font: bold, &quot;Comic Sans MS&quot;;;
+text-align:center;
+color:#FFFFFF;
+border-color:#FFFFFF;</string>
+    </property>
+    <property name="text">
+     <string>PDF</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
