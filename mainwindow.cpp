@@ -22,7 +22,7 @@
 #include <QtPrintSupport/QPrinter>
 #include <QPdfWriter>
 #include <QPainter>
-
+#include <QDebug>
 #include <QFileDialog>
 #include <QTextDocument>
 #include <QTextEdit>
@@ -31,8 +31,9 @@
 #include <QtSvg/QSvgRenderer>
 #include<QDirModel>
 #include "qrcode.h"
-
-
+#include<QQuickItem>
+#include "arduino.h"
+#include <QThread>
 using qrcodegen::QrCode;
 using qrcodegen::QrSegment;
 
@@ -42,7 +43,16 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
+    int ret=A.connect_arduino(); // lancer la connexion à arduino
+             switch(ret)
+             {
+             case(0):qDebug()<< "arduino is available and connected to : "<< A.getarduino_port_name();
+                 break;
+             case(1):qDebug() << "arduino is available but not connected to :" <<A.getarduino_port_name();
+                break;
+             case(-1):qDebug() << "arduino is not available";
+             }
+              QObject::connect(A.getserial(),SIGNAL(readyRead()),this,SLOT(verification())); // permet de lancer
 
     mCamera = new QCamera(this);
         mCameraViewfinder = new QCameraViewfinder(this);
@@ -286,5 +296,71 @@ void MainWindow::on_QR_clicked()
            }
 }
 
+void MainWindow::verification()
+{
+   // A.write_to_arduino("2");//SI ON A DEJA OUVERT UN MESSAGE BOX
+
+    data=A.read_from_arduino();
+qDebug()<<data;
+QThread::sleep(2);
+ int i=1 ;
+    if(data=="3")
+    {
+        QString id=ui->lineEditValabilite->text();
+        spectateurs spectateurs=s.valabilite(id);
+        if(spectateurs.getid()!=0)
+
+             {
+            i=1 ;
+            QString test=" ";
+            QString str = " spectateur valable \n ID  :" +QString::number(spectateurs.getid())+" \n Nom  : "+spectateurs.getnom()+ "\n Prenom  : "+spectateurs.getprenom()+" \n Nationalite  : "+spectateurs.getnationalite()+" \n Age : "+spectateurs.getAge() ;
+
+     QMessageBox::information(this, tr("Affectation"),str,QMessageBox::Ok);
+        }/*else
+        {
+            QMessageBox::information(this, tr("erreur"),"erreur",QMessageBox::Ok);
+
+        }*/
+  //  A.write_to_arduino("0");//INDICATION DE L'OUVERTURE DU MESSAGE BOX
+    QMessageBox mbox;
+    if (spectateurs.getid()!=0)
+    {
+    mbox.setText("VERIFICATION");
+    mbox.setInformativeText("ticket valable : VOULEZ VOUS OUVRIR LE PORTAIL ?");
+    QPushButton *yesbtn = mbox.addButton(tr("Ouvrir"), QMessageBox::AcceptRole);
+    QPushButton *nobtn = mbox.addButton(tr("Refuser"), QMessageBox::RejectRole);
+    mbox.addButton(yesbtn, QMessageBox::AcceptRole);
+    mbox.addButton(nobtn, QMessageBox::RejectRole);
+
+
+
+    mbox.setIcon(QMessageBox::Warning);
+
+    mbox.exec();
+
+
+    if (mbox.clickedButton() == yesbtn) {
+
+        A.write_to_arduino("1");//POUR OUVIRIR LE PORTAIL
+        QMessageBox::information(this, QObject::tr("Appuyer sur cancel pour quitter."),
+                         QObject::tr("Portail Ouvert  !"), QMessageBox::Cancel);
+
+    } else if (mbox.clickedButton() == nobtn) {
+        QMessageBox::warning(this, QObject::tr("Appuyer sur cancel pour quitter."),
+                         QObject::tr("Portail fermé !"), QMessageBox::Cancel);
+
+    }
+}else
+         {
+        QMessageBox::warning(this, QObject::tr("."),
+                         QObject::tr("ticket non valable :PORTE FERME "), QMessageBox::Cancel);
+        QPushButton *nobtn = mbox.addButton(tr("Refuser"), QMessageBox::RejectRole);
+        mbox.addButton(nobtn, QMessageBox::RejectRole);
+    }
+
+    }
+
+
+}
 
 

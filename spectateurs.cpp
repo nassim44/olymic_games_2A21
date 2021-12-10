@@ -201,7 +201,25 @@ bool checkCameraAvailability()
         return false;
 }
 
+spectateurs spectateurs::valabilite(QString id)
+ {
+     QSqlQuery query;
+
+     query.prepare("SELECT * FROM fans WHERE  id=:id" );
+
+     query.bindValue(":id",id);
+     query.exec();
+     spectateurs spectateurs;
+     if(query.next())
+        {
+
+         spectateurs.setid(query.value(0).toInt());
+         spectateurs.setnom(query.value(1).toString());
+         spectateurs.setprenom(query.value(2).toString());
+         spectateurs.setAge(query.value(3).toInt());
+         spectateurs.setnationalite(query.value(4).toString());
 
 
+     }
 
-
+}

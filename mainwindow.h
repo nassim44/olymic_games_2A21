@@ -2,7 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-
+#include "arduino.h"
+#include "spectateurs.h"
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -42,13 +43,8 @@ private slots:
 
     void on_QR_clicked();
 
-    void on_pushButton_open_destroyed();
+    void verification();
 
-     void on_pushButton_close_2_clicked();
-
-     void on_pushButton_moin_clicked();
-
-     void update_label();
 private:
     Ui::MainWindow *ui;
     QCamera *mCamera;
@@ -59,5 +55,9 @@ private:
         QAction *mEncenderAction; // ouvrir
         QAction *mApagarAction; //stop
         QAction *mCapturarAction; //capture
+        QByteArray data ;
+        arduino A;
+
+        spectateurs s;
 };
 #endif // MAINWINDOW_H

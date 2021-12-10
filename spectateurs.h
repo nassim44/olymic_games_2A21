@@ -37,7 +37,7 @@ public:
     void recherche(Ui::MainWindow *ui);
     bool verif_nom(QString nom) ;
     bool verif_age(int age) ;
-
+    spectateurs valabilite(QString);
 
 };
 

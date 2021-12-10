@@ -532,6 +532,16 @@ color: rgb(255, 17, 17);</string>
          <string/>
         </property>
        </widget>
+       <widget class="QLineEdit" name="lineEditValabilite">
+        <property name="geometry">
+         <rect>
+          <x>420</x>
+          <y>160</y>
+          <width>113</width>
+          <height>25</height>
+         </rect>
+        </property>
+       </widget>
       </widget>
       <widget class="QWidget" name="tab_6">
        <attribute name="title">
